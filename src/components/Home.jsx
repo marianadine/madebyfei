@@ -62,8 +62,28 @@ const Home = () => {
 
 
       <section className='container' ref={sectionRefs[2]} data-index={2}>
-        <p>*serving layouts since 2020</p>
+        <div className='section3-wrapper'>
+          <p className='left-caption'>*serving layouts since 2020</p>
+
+          <div className='section3-row'>
+            <div className='section3-boxheader'>
+              <p>Select all images with</p>
+              <h3>My Designs</h3>
+              <p>Click ‘View All’ to explore my full collection of designs.</p>
+            </div>
+            <div className='section3-grid'>
+              <div></div><div></div><div></div>
+              <div></div><div></div><div></div>
+              <div></div><div></div><div></div>
+            </div>
+          </div>
+
+          <p className='right-caption'>*she coded, she styled, she deployed</p>
+        </div>
+        <button className='viewall-style'>View All</button>
+
       </section>
+
 
       <section className='container' ref={sectionRefs[3]} data-index={3}>
         <p>Say Hello!</p>
