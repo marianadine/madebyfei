@@ -1,8 +1,13 @@
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     padding: 30px 50px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 1000;
 }
 
 .navbar-links {
