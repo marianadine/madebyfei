@@ -1,0 +1,45 @@
+.section1-p {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.mainlogo {
+    width: 650px;
+    margin: 50px;
+}
+
+.intro-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.me {
+    width: 260px;
+}
+
+.section2-p,
+.myname {
+    font-size: 65px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.myname {
+    color: #4077DE;
+}
+
+.section2-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section2-footerp {
+    font-weight: 500;
+    font-size: 18px;
+}

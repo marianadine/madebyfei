@@ -1,40 +1,56 @@
 .container {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
 }
 
 .scroll-container {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .scroll-indicator {
-  position: fixed;
-  top: 90%;
-  left: 40px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 1001;
+    position: fixed;
+    top: 90%;
+    left: 40px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1001;
 }
 
 .scroll-indicator .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: grey;
-  transition: background-color 0.3s;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: grey;
+    transition: background-color 0.3s;
 }
 
 .scroll-indicator .dot.active {
-  background-color: black;
+    background-color: black;
+}
+
+.button-style {
+    background-color: transparent;
+    padding: 8px 15px;
+    border: 1px #000 solid;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-style:hover {
+    background-color: #000;
+    color: #fff;
 }

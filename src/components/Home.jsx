@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import '../styles/Home.css';
 import '../styles/CommonStyles.css';
+import logo from '../imgs/logoblue.png';
+import me from '../imgs/section2me.png';
 import ScrollIndicator from './ScrollIndicator';
 
 const Home = () => {
@@ -31,18 +33,33 @@ const Home = () => {
       <ScrollIndicator sections={4} activeSection={activeSection} />
 
       <section className='container' ref={sectionRefs[0]} data-index={0}>
-        <p>she really said ‘I’m gonna make my portfolio.’</p>
-        <img alt="" />
-        <p>designs that click. literally.</p>
+        <p className='section1-p'>she really said ‘I’m gonna make my portfolio.’</p>
+        <img className='mainlogo' src={logo} />
+        <p className='section1-p'>designs that click. literally.</p>
       </section>
 
       <section className='container' ref={sectionRefs[1]} data-index={1}>
-        <img alt="" />
-        <p>Hi, I’m <span>Nadine</span>.</p>
-        <p>— an aspiring frontend developer with a
-          passion for clean design and smooth
-          user experiences.</p>
+        <div style={{ alignItems: 'flex-start' }}>
+          <div className='intro-flex'>
+            <img className='me' src={me} alt="Me" />
+            <p className='section2-p'>
+              Hi, I’m <span className='myname'>Nadine</span>.
+            </p>
+          </div>
+
+          <p className='section2-p'>
+            — an aspiring frontend developer with a <br />
+            passion for clean design and smooth <br />
+            user experiences.
+          </p>
+
+          <div className='section2-footer'>
+            <p className='section2-footerp'>*and lowkey willing to learn backend too</p>
+            <button className='button-style'>Why Frontend Development?</button>
+          </div>
+        </div>
       </section>
+
 
       <section className='container' ref={sectionRefs[2]} data-index={2}>
         <p>*serving layouts since 2020</p>
