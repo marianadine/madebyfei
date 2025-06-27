@@ -1,9 +1,16 @@
 import React, { useEffect, useState, useRef } from 'react';
 import '../styles/Home.css';
 import '../styles/CommonStyles.css';
+import ScrollIndicator from './ScrollIndicator';
+
 import logo from '../imgs/logoblue.png';
 import me from '../imgs/section2me.png';
-import ScrollIndicator from './ScrollIndicator';
+import section4bg from '../imgs/section4bg.png';
+import linlogo from '../imgs/linlogo.png';
+import iglogo from '../imgs/iglogo.png';
+import fblogo from '../imgs/fblogo.png';
+import ghublogo from '../imgs/ghublogo.png';
+
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -84,10 +91,26 @@ const Home = () => {
 
       </section>
 
-
       <section className='container' ref={sectionRefs[3]} data-index={3}>
-        <p>Say Hello!</p>
+        <div className='section4-container'>
+          <img className='section4-bg' src={section4bg} alt="Background" />
+          <div className='section4-card'>
+            <h2 className='section4-heading'>Say Hello!</h2>
+            <div className='section4-icons'>
+              <img className='contacts-logo' src={ghublogo} alt="GitHub" />
+              <img className='contacts-logo' src={fblogo} alt="Facebook" />
+              <img className='contacts-logo' src={iglogo} alt="Instagram" />
+              <img className='contacts-logo' src={linlogo} alt="LinkedIn" />
+            </div>
+            <p className='section4-text'>
+              I’m always up for a good dev chat, a design collab, or just geeking<br />
+              out over frontend tools. Let’s talk! Have something creative in<br />
+              mind? Hit me up at: nadinerufo7@gmail.com
+            </p>
+          </div>
+        </div>
       </section>
+
     </div>
   );
 };
