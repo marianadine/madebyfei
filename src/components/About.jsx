@@ -97,7 +97,7 @@ const About = () => {
       </section>
 
 
-      <section className='container' ref={sectionRefs[2]} data-index={2}>
+      <section className='container' ref={sectionRefs[1]} data-index={1}>
         <div className='igpost-box'>
           <div className='igpost-header'>
             <img className='igpfp' src={igpfp} />
@@ -122,7 +122,7 @@ const About = () => {
         <div className="starterpack-container">
           <div className="starterpack-wrapper">
             <img className='starterpack' src={glasses} />
-            <span className="starterpack-number">01</span>
+            <span className="starterpack-number">04</span>
           </div>
           <div className="starterpack-wrapper">
             <img className='starterpack' src={spotify} />
@@ -130,15 +130,15 @@ const About = () => {
           </div>
           <div className="starterpack-wrapper">
             <img className='starterpack' src={cats} />
-            <span className="starterpack-number">03</span>
+            <span className="starterpack-number">01</span>
           </div>
           <div className="starterpack-wrapper">
             <img className='starterpack' src={book} />
-            <span className="starterpack-number">04</span>
+            <span className="starterpack-number">05</span>
           </div>
           <div className="starterpack-wrapper">
             <img className='starterpack' src={laptop} />
-            <span className="starterpack-number">05</span>
+            <span className="starterpack-number">03</span>
           </div>
           <div className="starterpack-wrapper">
             <img className='starterpack' src={chakolab} />
