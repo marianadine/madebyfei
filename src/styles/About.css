@@ -51,7 +51,7 @@
 
 .section3-albumtitle {
     font-weight: 700;
-    font-size: 64px;
+    font-size: 60px;
     margin-top: -20px;
 }
 
@@ -59,4 +59,78 @@
     font-size: 16px;
     width: 40%;
     text-align: center;
+    margin-top: 50px;
+}
+
+.starterpack-container {
+    position: relative;
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+.starterpack {
+    position: absolute;
+    width: 200px;
+}
+
+.starterpack-wrapper:nth-child(1) {
+    top: 20px;
+    left: 10px;
+}
+
+.starterpack-wrapper:nth-child(2) {
+    top: -10px;
+    left: 300px;
+}
+
+.starterpack-wrapper:nth-child(3) {
+    top: 250px;
+    left: 150px;
+}
+
+.starterpack-wrapper:nth-child(4) {
+    top: 250px;
+    left: 460px;
+}
+
+.starterpack-wrapper:nth-child(5) {
+    top: 80px;
+    left: 600px;
+}
+
+.starterpack-wrapper:nth-child(6) {
+    top: 250px;
+    left: 800px;
+}
+
+.starterpack-wrapper:nth-child(7) {
+    top: 0px;
+    left: 950px;
+}
+
+.starterpack-wrapper:nth-child(2) .starterpack {
+    width: 150px;
+}
+
+.starterpack-wrapper:nth-child(3) .starterpack,
+.starterpack-wrapper:nth-child(5) .starterpack,
+.starterpack-wrapper:nth-child(6) .starterpack,
+.starterpack-wrapper:nth-child(7) .starterpack {
+    width: 240px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.starterpack-wrapper {
+    position: absolute;
+}
+
+.starterpack-number {
+    position: absolute;
+    left: -20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    text-shadow: 1px 1px 2px #fff;
 }

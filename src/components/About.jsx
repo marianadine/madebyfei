@@ -5,6 +5,13 @@ import ScrollIndicator from './ScrollIndicator';
 
 import igpfp from '../imgs/igpfp.jpg';
 import camera from '../imgs/camera.png';
+import albums from '../imgs/albums.png';
+import cats from '../imgs/cats.png';
+import spotify from '../imgs/spotify.png';
+import chakolab from '../imgs/chakolab.png';
+import laptop from '../imgs/laptop.png';
+import book from '../imgs/book.png';
+import glasses from '../imgs/glasses.png';
 
 const About = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -112,8 +119,35 @@ const About = () => {
         <button style={{ marginBottom: '40px' }} className='button-style'>starter pack</button>
         <p className='section3-albumtitle'>fei as an IT Student</p>
 
-        <div>
-          
+        <div className="starterpack-container">
+          <div className="starterpack-wrapper">
+            <img className='starterpack' src={glasses} />
+            <span className="starterpack-number">01</span>
+          </div>
+          <div className="starterpack-wrapper">
+            <img className='starterpack' src={spotify} />
+            <span className="starterpack-number">02</span>
+          </div>
+          <div className="starterpack-wrapper">
+            <img className='starterpack' src={cats} />
+            <span className="starterpack-number">03</span>
+          </div>
+          <div className="starterpack-wrapper">
+            <img className='starterpack' src={book} />
+            <span className="starterpack-number">04</span>
+          </div>
+          <div className="starterpack-wrapper">
+            <img className='starterpack' src={laptop} />
+            <span className="starterpack-number">05</span>
+          </div>
+          <div className="starterpack-wrapper">
+            <img className='starterpack' src={chakolab} />
+            <span className="starterpack-number">06</span>
+          </div>
+          <div className="starterpack-wrapper">
+            <img className='starterpack' src={albums} />
+            <span className="starterpack-number">07</span>
+          </div>
         </div>
 
         <p className='section3-albumtracks'>the cats, of course/spotify for the vibes/laptop, obviously/glasses so I can actually see/a book to keep me sane/drink your water/top albums on repeat</p>
