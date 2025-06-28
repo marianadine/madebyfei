@@ -109,8 +109,14 @@ const About = () => {
       </section>
 
       <section className='container' ref={sectionRefs[2]} data-index={2}>
-        <p className='section1-p'>she really said ‘I’m gonna make my portfolio.’</p>
-        <p className='section1-p'>designs that click. literally.</p>
+        <button style={{ marginBottom: '40px' }} className='button-style'>starter pack</button>
+        <p className='section3-albumtitle'>fei as an IT Student</p>
+
+        <div>
+          
+        </div>
+
+        <p className='section3-albumtracks'>the cats, of course/spotify for the vibes/laptop, obviously/glasses so I can actually see/a book to keep me sane/drink your water/top albums on repeat</p>
       </section>
 
     </div>
