@@ -4,3 +4,47 @@
     margin: -60px;
     margin-left: 0;
 }
+
+.igpost-box {
+    background-color: transparent;
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
+    border: #000 1px solid;
+    border-radius: 30px;
+    width: 430px;
+    padding: 20px 30px;
+}
+
+.igpost-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.igpfp {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.ig-uname {
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: -15px;
+}
+
+.ig-location {
+    font-weight: 500;
+    font-size: 11px;
+}
+
+.igpost-p {
+    font-size: 18px;
+    width: 95%;
+}
+
+.ig-camera {
+    width: 900px;
+    margin-left: -180px;
+    margin-top: 30px;
+}

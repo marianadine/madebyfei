@@ -3,6 +3,9 @@ import '../styles/About.css';
 import '../styles/CommonStyles.css';
 import ScrollIndicator from './ScrollIndicator';
 
+import igpfp from '../imgs/igpfp.jpg';
+import camera from '../imgs/camera.png';
+
 const About = () => {
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = [useRef(), useRef(), useRef()];
@@ -87,9 +90,22 @@ const About = () => {
       </section>
 
 
-      <section className='container' ref={sectionRefs[1]} data-index={1}>
-        <p className='section1-p'>she really said ‘I’m gonna make my portfolio.’</p>
-        <p className='section1-p'>designs that click. literally.</p>
+      <section className='container' ref={sectionRefs[2]} data-index={2}>
+        <div className='igpost-box'>
+          <div className='igpost-header'>
+            <img className='igpfp' src={igpfp} />
+            <div>
+              <p className='ig-uname'>ae.feyy</p>
+              <p className='id-location'>NU MOA, Pasay City, Philippines</p>
+            </div>
+          </div>
+
+          <img className='ig-camera' src={camera} />
+
+          <p style={{ marginBottom: '-10px' }} className='igpost-p'>Liked by <span style={{ fontWeight: 600 }}>yes.you</span> and <span style={{ fontWeight: 600 }}>others</span></p>
+          <p className='igpost-p'><span style={{ fontWeight: 600, marginRight: 15 }}>ae.feyy</span>what its like being an IT student
+            at NU MOA</p>
+        </div>
       </section>
 
       <section className='container' ref={sectionRefs[2]} data-index={2}>
