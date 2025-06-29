@@ -7,15 +7,101 @@
 
 .works-container {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    gap: 40px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
 }
 
 .work {
-    background-color: #D9D9D9;
-    width: 400px;
-    height: 600px;
-    border-radius: 30px;
+    flex: 0 0 auto;
+    min-width: 300px;
+    max-width: 300px;
+    height: 500px;
+    background-color: #f9f9f9;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 20px 40px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    scroll-snap-align: start;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.work.expanded {
+    min-width: 600px;
+    max-width: 600px;
+    background-color: #e0e0e0;
+}
+
+.work-duration {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 18px;
+    font-weight: bold;
+
+    border: #000 1px solid;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.work-bottominfo {
+    margin-top: auto;
+}
+
+.work-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.work-tech {
+    font-size: 18px;
+    margin-top: 6px;
+}
+
+.works-scroll-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.scroll-icon {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    z-index: 10;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.scroll-icon:hover {
+    color: #555;
+}
+
+.scroll-icon.left {
+    margin-right: 10px;
+}
+
+.scroll-icon.right {
+    margin-left: 10px;
+}
+
+.works-container {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
 .section2-headingtypo {
