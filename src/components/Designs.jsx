@@ -3,6 +3,13 @@ import '../styles/Designs.css';
 import '../styles/CommonStyles.css';
 import ScrollIndicator from './ScrollIndicator';
 
+import toggle from '../imgs/toggle.png';
+import halfcircle from '../imgs/halfcircle.png';
+import cxc from '../imgs/cxc.png';
+import circle from '../imgs/circle.png';
+import mouse from '../imgs/mouse.png';
+import sketch from '../imgs/sketch.png';
+
 const Designs = () => {
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
@@ -67,27 +74,29 @@ const Designs = () => {
       </section>
 
       <section className='container' ref={sectionRefs[3]} data-index={3}>
-        <div>
-          <div>
-            <img></img>
-            <p>Sketch.</p>
-            <img></img>
-            <p>Inspire.</p>
-            <img></img>
+        <div style={{ marginTop: '160px' }}>
+          <div className='workflow-container'>
+            <div style={{ marginBottom: '50px' }} className='workflow-oneline'>
+              <img src={circle} />
+              <button className='workflow-heading'>Sketch.</button>
+              <img src={sketch} />
+              <button className='workflow-heading'>Inspire.</button>
+              <img src={cxc} />
+            </div>
+
+            <div className='workflow-oneline'>
+              <button className='workflow-heading'>Layout.</button>
+              <img src={halfcircle} />
+              <button className='workflow-heading'>Code.</button>
+              <img src={mouse} />
+              <img src={toggle} />
+            </div>
           </div>
 
-          <div>
-            <p>Layout.</p>
-            <img></img>
-            <p>Code.</p>
-            <img></img>
-            <img></img>
+          <div style={{ width: '1600px' }} className='workflow-oneline'>
+            <p className='workflow-explanation'>I start by sketching ideas, seek inspiration to refine concepts, create a thoughtful layout, and finally bring designs to life through code.</p>
+            <h3 className='workflow-title'>WORKFLOW</h3>
           </div>
-        </div>
-
-        <div>
-          <p>I start by sketching ideas, seek inspiration to refine concepts, create a thoughtful layout, and finally bring designs to life through code.</p>
-          <h3>WORKFLOW</h3>
         </div>
       </section>
 

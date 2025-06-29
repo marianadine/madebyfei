@@ -53,3 +53,35 @@
     text-align: center;
     width: 50%;
 }
+
+.workflow-oneline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+}
+
+.workflow-heading {
+    background-color: transparent;
+    border: #000 2px solid;
+    border-radius: 200px;
+    font-size: 96px;
+    padding: 0px 30px;
+}
+
+.workflow-container {
+    border: #000 2px solid;
+    padding: 50px;
+    border-radius: 50px;
+    margin-bottom: -50px;
+}
+
+.workflow-explanation {
+    font-size: 20px;
+    width: 70%;
+}
+
+.workflow-title {
+    font-weight: 700;
+    font-size: 96px;
+}
