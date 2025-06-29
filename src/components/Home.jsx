@@ -11,6 +11,7 @@ import iglogo from '../imgs/iglogo.png';
 import fblogo from '../imgs/fblogo.png';
 import ghublogo from '../imgs/ghublogo.png';
 
+import { FaCheck } from "react-icons/fa";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -34,6 +35,17 @@ const Home = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const [selectedBoxes, setSelectedBoxes] = useState([]);
+
+  const toggleBox = (index) => {
+    setSelectedBoxes(prev =>
+      prev.includes(index)
+        ? prev.filter(i => i !== index) // deselect
+        : [...prev, index]              // select
+    );
+  };
+
 
   return (
     <div className="scroll-container">
@@ -79,9 +91,19 @@ const Home = () => {
               <p>Click ‘View All’ to explore my full collection of designs.</p>
             </div>
             <div className='section3-grid'>
-              <div></div><div></div><div></div>
-              <div></div><div></div><div></div>
-              <div></div><div></div><div></div>
+              {Array.from({ length: 9 }, (_, index) => (
+                <div
+                  key={index}
+                  className={`section3-box ${selectedBoxes.includes(index) ? 'selected' : ''}`}
+                  onClick={() => toggleBox(index)}
+                >
+                  {selectedBoxes.includes(index) && (
+                    <div className="checkmark">
+                      <FaCheck size={16} />
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 

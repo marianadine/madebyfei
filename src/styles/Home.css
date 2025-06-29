@@ -89,6 +89,35 @@
     border-radius: 4px;
 }
 
+.section3-box {
+    background-color: #e0e0e0;
+    height: 180px;
+    border-radius: 4px;
+    position: relative;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.section3-box.selected {
+    transform: scale(0.95);
+}
+
+.section3-box .checkmark {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #1FD860;
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 .section3-wrapper {
     display: flex;
     flex-direction: row;
