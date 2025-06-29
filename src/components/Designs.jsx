@@ -28,7 +28,7 @@ const Designs = () => {
 
   return (
     <div className="scroll-container">
-      <ScrollIndicator sections={3} activeSection={activeSection} />
+      <ScrollIndicator sections={4} activeSection={activeSection} />
 
       <section style={{ alignItems: 'flex-start' }} className='container' ref={sectionRefs[0]} data-index={0}>
         <div style={{ marginLeft: '100px' }}>
@@ -63,11 +63,32 @@ const Designs = () => {
       </section>
 
       <section className='container' ref={sectionRefs[2]} data-index={2}>
-
+        <p>h4</p>
       </section>
 
       <section className='container' ref={sectionRefs[3]} data-index={3}>
+        <div>
+          <div>
+            <img></img>
+            <p>Sketch.</p>
+            <img></img>
+            <p>Inspire.</p>
+            <img></img>
+          </div>
 
+          <div>
+            <p>Layout.</p>
+            <img></img>
+            <p>Code.</p>
+            <img></img>
+            <img></img>
+          </div>
+        </div>
+
+        <div>
+          <p>I start by sketching ideas, seek inspiration to refine concepts, create a thoughtful layout, and finally bring designs to life through code.</p>
+          <h3>WORKFLOW</h3>
+        </div>
       </section>
 
     </div>
