@@ -5,6 +5,13 @@
     margin-top: -50px;
 }
 
+.section1-oneline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+}
+
 .works-container {
     display: flex;
     gap: 40px;

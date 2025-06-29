@@ -95,7 +95,16 @@ const Designs = () => {
       <section style={{ alignItems: 'flex-start' }} className='container' ref={sectionRefs[0]} data-index={0}>
         <div style={{ marginLeft: '100px' }}>
           <button style={{ marginBottom: '40px' }} className='button-style'>Why I love frontend development?</button>
-          <p className='works-heading'>HER WORKS</p>
+          <div className='section1-oneline'>
+            <p className='works-heading'>HER WORKS</p>
+            <div>
+              <button className="scroll-icon left" onClick={scrollLeft}>
+                <FaChevronLeft size={30} />
+              </button>
+              <button className="scroll-icon right" onClick={scrollRight}>
+                <FaChevronRight size={30} />
+              </button></div>
+          </div>
           <div className="works-scroll-wrapper">
 
             <div className='works-container' ref={worksContainerRef}>
@@ -114,13 +123,7 @@ const Designs = () => {
                 </div>
               ))}
             </div>
-
-          </div><button className="scroll-icon left" onClick={scrollLeft}>
-            <FaChevronLeft size={30} />
-          </button>
-          <button className="scroll-icon right" onClick={scrollRight}>
-            <FaChevronRight size={30} />
-          </button>
+          </div>
         </div>
       </section>
 
