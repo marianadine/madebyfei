@@ -44,7 +44,22 @@ const Designs = () => {
       </section>
 
       <section className='container' ref={sectionRefs[1]} data-index={1}>
+        <div style={{ margin: '150px', marginTop: '-50px', width: '90%' }}>
+          <h3 className='section2-headingtypo'>Typography</h3>
 
+          <div className='section2-oneline'>
+            <h3 className='section2-fontnamemain'>Poppins</h3>
+            <p>it’s <span style={{ fontWeight: '700' }}>bold</span> when it needs to be, <span style={{ fontWeight: '300' }}>light</span> when it should be</p>
+          </div>
+
+          <div className='section2-oneline'>
+            <p style={{ fontStyle: 'italic' }}>my go-to-font</p>
+            <h3 className='section2-fontname'>Regular</h3>
+          </div>
+
+
+        </div>
+        <p className='section2-explanation'>for its modern, geometric shapes and clean lines — it gives my designs a fresh, friendly vibe while keeping everything perfectly readable. It’s like the font version of a good handshake: professional, approachable, and confident.</p>
       </section>
 
       <section className='container' ref={sectionRefs[2]} data-index={2}>
