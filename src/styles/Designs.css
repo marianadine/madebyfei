@@ -67,6 +67,14 @@
     border-radius: 200px;
     font-size: 96px;
     padding: 0px 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.workflow-heading:hover {
+    background-color: #000;
+    color: #fff;
+    transform: scale(1.05);
 }
 
 .workflow-container {
