@@ -152,7 +152,8 @@
 .section2-explanation {
     margin-top: 50px;
     text-align: center;
-    width: 50%;
+    width: 60%;
+    font-size: 18px;
 }
 
 .workflow-oneline {

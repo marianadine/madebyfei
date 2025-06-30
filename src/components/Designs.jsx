@@ -161,7 +161,9 @@ const Designs = () => {
             </div>
           </div>
           <div style={{ width: '1600px' }} className='workflow-oneline'>
-            <p className='workflow-explanation'>I start by sketching ideas, seek inspiration to refine concepts, create a thoughtful layout, and finally bring designs to life through code.</p>
+            <p className='workflow-explanation'>
+              My process begins with sketching raw ideas, from there — I seek inspiration to refine concepts and add unique flair. I then craft thoughtful layouts that balance form and function. Finally, I bring designs to life through code — transforming vision into an interactive reality.
+            </p>
             <h3 className='workflow-title'>WORKFLOW</h3>
           </div>
         </div>
