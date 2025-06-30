@@ -16,6 +16,7 @@ import glasses from '../imgs/glasses.png';
 const About = () => {
   const photoArray = [albums, cats, spotify, chakolab, laptop, book, glasses];
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+  const [swipeDirection, setSwipeDirection] = useState('');
 
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = [useRef(), useRef(), useRef()];
@@ -112,11 +113,29 @@ const About = () => {
 
           <img className='ig-camera' src={camera} />
           <div className='ig-photo'>
-            <img src={photoArray[currentPhotoIndex]} alt="IG post" className="ig-photo-img" />
+            <img
+              src={photoArray[currentPhotoIndex]}
+              alt="IG post"
+              className={`ig-photo-img ${swipeDirection}`}
+              onAnimationEnd={() => setSwipeDirection('')} // reset animation
+            />
           </div>
-          <button className="ig-next-button" onClick={() => setCurrentPhotoIndex((prev) => (prev + 1) % photoArray.length)}>
-          </button>
-          <button className="ig-previous-button" onClick={() => setCurrentPhotoIndex((prev) => (prev - 1 + photoArray.length) % photoArray.length)}></button>
+
+          <button
+            className="ig-next-button"
+            onClick={() => {
+              setSwipeDirection('left');
+              setCurrentPhotoIndex((prev) => (prev + 1) % photoArray.length);
+            }}
+          ></button>
+
+          <button
+            className="ig-previous-button"
+            onClick={() => {
+              setSwipeDirection('right');
+              setCurrentPhotoIndex((prev) => (prev - 1 + photoArray.length) % photoArray.length);
+            }}
+          ></button>
 
           <p style={{ marginBottom: '-10px' }} className='igpost-p'>Liked by <span style={{ fontWeight: 600 }}>yes.you</span> and <span style={{ fontWeight: 600 }}>others</span></p>
           <p className='igpost-p'><span style={{ fontWeight: 600, marginRight: 15 }}>ae.feyy</span>what its like being an IT student at NU MOA - click the camera buttons to see!</p>

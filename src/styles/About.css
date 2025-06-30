@@ -71,6 +71,38 @@
     display: block;
 }
 
+.ig-photo-img.left {
+    animation: swipeLeft 0.5s forwards;
+}
+
+.ig-photo-img.right {
+    animation: swipeRight 0.5s forwards;
+}
+
+@keyframes swipeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes swipeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .ig-previous-button,
 .ig-next-button {
     position: absolute;

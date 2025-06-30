@@ -46,7 +46,6 @@ const Home = () => {
     );
   };
 
-
   return (
     <div className="scroll-container">
       <ScrollIndicator sections={4} activeSection={activeSection} />
