@@ -91,6 +91,12 @@
     right: -97px;
 }
 
+.ig-previous-button:hover,
+.ig-next-button:hover {
+    background-color: rgba(200, 200, 200, 0.5);
+    transform: scale(1.05);
+}
+
 .section3-albumtitle {
     font-weight: 700;
     font-size: 60px;
