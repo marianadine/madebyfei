@@ -5,6 +5,9 @@ import '../styles/CommonStyles.css';
 import ScrollIndicator from './ScrollIndicator';
 
 import logo from '../imgs/logoblue.png';
+import logo1 from '../imgs/logoblue.png';
+import logo2 from '../imgs/logored.png';
+import logo3 from '../imgs/logogreen.png';
 import me from '../imgs/section2me.png';
 import section4bg from '../imgs/section4bg.png';
 import linlogo from '../imgs/linlogo.png';
@@ -26,6 +29,26 @@ import { FaCheck } from "react-icons/fa";
 
 const Home = () => {
   const navigate = useNavigate();
+
+  const logos = [logo1, logo2, logo3];
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Fade out
+      setFade(false);
+
+      // After fade-out, switch logo & fade back in
+      setTimeout(() => {
+        setCurrentLogoIndex(prev => (prev + 1) % logos.length);
+        setFade(true);
+      }, 500); // half of transition duration
+    }, 3000); // every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
 
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
@@ -72,13 +95,40 @@ const Home = () => {
 
   const [showModal, setShowModal] = useState(false);
 
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showGradient, setShowGradient] = useState(false);
+
   return (
     <div className="scroll-container">
       <ScrollIndicator sections={4} activeSection={activeSection} />
 
-      <section className='container' ref={sectionRefs[0]} data-index={0}>
+      <section
+        className='container section1-container'
+        ref={sectionRefs[0]}
+        data-index={0}
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+          setShowGradient(true);
+        }}
+        onMouseLeave={() => setShowGradient(false)}
+      >
+        {showGradient && (
+          <div
+            className="pointer-gradient"
+            style={{
+              left: `${mousePosition.x}px`,
+              top: `${mousePosition.y}px`,
+            }}
+          />
+        )}
+
         <p className='section1-p'>she really said ‘I’m gonna make my portfolio.’</p>
-        <img className='mainlogo' src={logo} />
+        <img
+          className={`mainlogo simple-fade ${fade ? 'fade-in' : 'fade-out'}`}
+          src={logos[currentLogoIndex]}
+          alt="Logo"
+        />
         <p className='section1-p'>designs that click. literally.</p>
       </section>
 
@@ -114,11 +164,11 @@ const Home = () => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className='modal-border'>
               <img className='modal-logo' src={logo} />
-            <h2 className='modal-question'>Why Frontend Development?</h2>
-            <p className='modal-answer'>
-              I love frontend development because it’s where design meets technology — I get to bring ideas to life with interactive, beautiful user interfaces. Seeing designs turn into functional, engaging experiences for users is incredibly satisfying. It’s a blend of creativity and problem-solving that I find endlessly exciting!
-            </p>
-              </div>
+              <h2 className='modal-question'>Why Frontend Development?</h2>
+              <p className='modal-answer'>
+                I love frontend development because it’s where design meets technology — I get to bring ideas to life with interactive, beautiful user interfaces. Seeing designs turn into functional, engaging experiences for users is incredibly satisfying. It’s a blend of creativity and problem-solving that I find endlessly exciting!
+              </p>
+            </div>
           </div>
         </div>
       )}

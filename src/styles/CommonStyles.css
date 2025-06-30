@@ -1,3 +1,40 @@
+/* Entrance animations */
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeSlideRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .container {
     height: 100vh;
     width: 100%;
@@ -6,6 +43,7 @@
     justify-content: center;
     align-items: center;
     scroll-snap-align: start;
+    animation: fadeSlideUp 1s ease forwards;
 }
 
 .scroll-container {
@@ -120,4 +158,16 @@
     text-align: justify;
     font-size: 16px;
     transition: color 0.3s ease;
+}
+
+.pointer-gradient {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(64, 119, 222, 0.4) 0%, transparent 60%);
+    transform: translate(-50%, -50%);
+    transition: left 0.05s linear, top 0.05s linear;
+    z-index: 1;
 }
