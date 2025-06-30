@@ -16,7 +16,7 @@ const Designs = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(0);
 
-  const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
+  const sectionRefs = [useRef(), useRef(), useRef()];
   const worksContainerRef = useRef();
   const scrollLeft = () => {
     worksContainerRef.current.scrollBy({
@@ -90,7 +90,7 @@ const Designs = () => {
 
   return (
     <div className="scroll-container">
-      <ScrollIndicator sections={4} activeSection={activeSection} />
+      <ScrollIndicator sections={3} activeSection={activeSection} />
 
       <section style={{ alignItems: 'flex-start' }} className='container' ref={sectionRefs[0]} data-index={0}>
         <div style={{ marginLeft: '100px' }}>
@@ -144,10 +144,6 @@ const Designs = () => {
       </section>
 
       <section className='container' ref={sectionRefs[2]} data-index={2}>
-        <p>h4</p>
-      </section>
-
-      <section className='container' ref={sectionRefs[3]} data-index={3}>
         <div style={{ marginTop: '160px' }}>
           <div className='workflow-container'>
             <div style={{ marginBottom: '50px' }} className='workflow-oneline'>
