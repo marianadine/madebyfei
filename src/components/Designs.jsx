@@ -10,6 +10,8 @@ import circle from '../imgs/circle.png';
 import mouse from '../imgs/mouse.png';
 import sketch from '../imgs/sketch.png';
 
+import tempImage from '../imgs/toggle.png';
+
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Designs = () => {
@@ -34,36 +36,77 @@ const Designs = () => {
 
   const designs = [
     {
-      name: "Portfolio Website",
-      technologies: "HTML, CSS, React",
-      type: "Individual",
-      duration: "2 months"
+      name: "SolarSphere",
+      technologies: "ReactJS, React Native, Node.js, MongoDB",
+      type: "Capstone Project",
+      mode: "Groupings",
+      image: tempImage
     },
     {
-      name: "Team Project App",
-      technologies: "React, Node.js, MongoDB",
-      type: "Group",
-      duration: "4 months"
+      name: "Made By Fei",
+      technologies: "HTML, CSS, ReactJS",
+      type: "Full Stack Development",
+      mode: "Individual",
+      image: tempImage
     },
     {
-      name: "E-commerce UI",
-      technologies: "Figma, Tailwind CSS",
-      type: "Individual",
-      duration: "1 month"
+      name: "ExploreSphere",
+      technologies: "ReactJS, Figma",
+      type: "Front-end Development",
+      mode: "Groupings",
+      image: tempImage
     },
     {
-      name: "Mobile Planner",
-      technologies: "React Native, Expo",
-      type: "Individual",
-      duration: "3 months"
+      name: "Pawsitive Care",
+      technologies: "Java, Figma, Android Studio",
+      type: "Full Stack Development",
+      mode: "Individual",
+      image: tempImage
     },
     {
-      name: "Mobile Planner",
-      technologies: "React Native, Expo",
-      type: "Individual",
-      duration: "3 months"
+      name: "NU MOA Bulldogs Exchange",
+      technologies: "Figma, ReactJS, MongoDB",
+      type: "Full Stack Development",
+      mode: "Groupings",
+      image: tempImage
+    },
+    {
+      name: "EcoAir",
+      technologies: "Java, Netbeans, Canva",
+      type: "Full Stack Development",
+      mode: "Groupings",
+      image: tempImage
+    },
+    {
+      name: "Uniqlo Inventory System",
+      technologies: "Java, Netbeans, Canva",
+      type: "Full Stack Development",
+      mode: "Individual",
+      image: tempImage
+    },
+    {
+      name: "COCO Fashion Week 2025",
+      technologies: "Figma",
+      type: "UI/UX Design",
+      mode: "Individual",
+      image: tempImage
+    },
+    {
+      name: "Cupid 404",
+      technologies: "Figma",
+      type: "UI/UX Design",
+      mode: "Individual",
+      image: tempImage
+    },
+    {
+      name: "Best Dressed Voting System",
+      technologies: "Figma",
+      type: "UI/UX Design",
+      mode: "Individual",
+      image: tempImage
     }
   ];
+
 
   useEffect(() => {
     const observerOptions = { root: null, threshold: 0.5 };
@@ -113,13 +156,20 @@ const Designs = () => {
                   key={index}
                   className={`work ${expandedIndex === index ? 'expanded' : ''}`}
                   onClick={() => handleExpand(index)}
+                  style={{
+                    backgroundImage: `url(${design.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                  }}
                 >
-                  <p className="work-duration">{design.duration}</p>
+                  <p className="work-duration">{design.type}</p>
                   <div className='work-bottominfo'>
-                    <h4 className="work-name">{design.name} | {design.type}</h4>
+                    <h4 className="work-name">{design.name} | {design.mode}</h4>
                     <p className="work-tech">{design.technologies}</p>
                   </div>
                 </div>
+
               ))}
             </div>
           </div>
