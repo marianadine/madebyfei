@@ -9,8 +9,18 @@ import cxc from '../imgs/cxc.png';
 import circle from '../imgs/circle.png';
 import mouse from '../imgs/mouse.png';
 import sketch from '../imgs/sketch.png';
-
 import tempImage from '../imgs/toggle.png';
+
+import bestdressed from '../imgs/bestdressed.png';
+import cupid404 from '../imgs/cupid404.png';
+import ars from '../imgs/ars.png';
+import uniqlo from '../imgs/uniqlo.png';
+import madebyfei from '../imgs/madebyfei.png';
+import solarsphere from '../imgs/solarsphere.png';
+import esphere from '../imgs/esphere.png';
+import cocofw from '../imgs/cocofw.png';
+import numoabe from '../imgs/numoabe.png';
+import pcare from '../imgs/pcare.png';
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
@@ -40,70 +50,70 @@ const Designs = () => {
       technologies: "ReactJS, React Native, Node.js, MongoDB",
       type: "Capstone Project",
       mode: "Groupings",
-      image: tempImage
+      image: solarsphere
     },
     {
       name: "Made By Fei",
       technologies: "HTML, CSS, ReactJS",
       type: "Full Stack Development",
       mode: "Individual",
-      image: tempImage
+      image: madebyfei
     },
     {
       name: "ExploreSphere",
       technologies: "ReactJS, Figma",
       type: "Front-end Development",
       mode: "Groupings",
-      image: tempImage
+      image: esphere
     },
     {
       name: "Pawsitive Care",
       technologies: "Java, Figma, Android Studio",
       type: "Full Stack Development",
       mode: "Individual",
-      image: tempImage
+      image: pcare
     },
     {
       name: "NU MOA Bulldogs Exchange",
       technologies: "Figma, ReactJS, MongoDB",
       type: "Full Stack Development",
       mode: "Groupings",
-      image: tempImage
+      image: numoabe
     },
     {
       name: "EcoAir",
       technologies: "Java, Netbeans, Canva",
       type: "Full Stack Development",
       mode: "Groupings",
-      image: tempImage
+      image: ars
     },
     {
       name: "Uniqlo Inventory System",
       technologies: "Java, Netbeans, Canva",
       type: "Full Stack Development",
       mode: "Individual",
-      image: tempImage
+      image: uniqlo
     },
     {
       name: "COCO Fashion Week 2025",
       technologies: "Figma",
       type: "UI/UX Design",
       mode: "Individual",
-      image: tempImage
+      image: cocofw
     },
     {
       name: "Cupid 404",
       technologies: "Figma",
       type: "UI/UX Design",
       mode: "Individual",
-      image: tempImage
+      image: cupid404
     },
     {
       name: "Best Dressed Voting System",
       technologies: "Figma",
       type: "UI/UX Design",
       mode: "Individual",
-      image: tempImage
+      image: bestdressed
     }
   ];
 
