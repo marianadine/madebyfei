@@ -95,18 +95,18 @@ const Designs = () => {
       <section style={{ alignItems: 'flex-start' }} className='container' ref={sectionRefs[0]} data-index={0}>
         <div style={{ marginLeft: '100px' }}>
           <button style={{ marginBottom: '40px' }} className='button-style'>Why I love frontend development?</button>
-          <div className='section1-oneline'>
-            <p className='works-heading'>HER WORKS</p>
-            <div>
-              <button className="scroll-icon left" onClick={scrollLeft}>
+          <div className='section1-oneline' style={{ alignItems: 'center' }}>
+            <p className='works-heading' style={{ marginRight: 40 }}>HER WORKS</p>
+            <div style={{ display: 'flex', gap: '10px' }}>
+              <button className="scroll-icon left" onClick={scrollLeft} aria-label="Scroll left">
                 <FaChevronLeft size={30} />
               </button>
-              <button className="scroll-icon right" onClick={scrollRight}>
+              <button className="scroll-icon right" onClick={scrollRight} aria-label="Scroll right">
                 <FaChevronRight size={30} />
-              </button></div>
+              </button>
+            </div>
           </div>
-          <div className="works-scroll-wrapper">
-
+          <div className="works-scroll-wrapper" style={{ maxWidth: '2000px', overflowX: 'auto' }}>
             <div className='works-container' ref={worksContainerRef}>
               {designs.map((design, index) => (
                 <div
@@ -119,7 +119,6 @@ const Designs = () => {
                     <h4 className="work-name">{design.name} | {design.type}</h4>
                     <p className="work-tech">{design.technologies}</p>
                   </div>
-
                 </div>
               ))}
             </div>
