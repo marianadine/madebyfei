@@ -226,6 +226,10 @@
     margin-bottom: 40px;
 }
 
+.section4-icons a {
+    transition: transform 0.3s ease;
+}
+
 .section4-icons a:nth-child(1) {
     transform: translateY(-20px);
 }
@@ -240,6 +244,22 @@
 
 .section4-icons a:nth-child(4) {
     transform: translateY(75px);
+}
+
+.section4-icons a:nth-child(1):hover {
+    transform: translateY(-20px) scale(1.1);
+}
+
+.section4-icons a:nth-child(2):hover {
+    transform: translateY(10px) scale(1.1);
+}
+
+.section4-icons a:nth-child(3):hover {
+    transform: translateY(45px) scale(1.1);
+}
+
+.section4-icons a:nth-child(4):hover {
+    transform: translateY(75px) scale(1.1);
 }
 
 .section4-text {
