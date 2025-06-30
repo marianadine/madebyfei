@@ -14,8 +14,18 @@ import laptop from '../imgs/laptop.png';
 import book from '../imgs/book.png';
 import glasses from '../imgs/glasses.png';
 
+import a from '../imgs/1.png';
+import b from '../imgs/2.png';
+import c from '../imgs/3.png';
+import d from '../imgs/4.png';
+import e from '../imgs/5.png';
+import f from '../imgs/6.png';
+import g from '../imgs/7.png';
+import h from '../imgs/8.png';
+import i from '../imgs/9.png';
+
 const About = () => {
-  const photoArray = [albums, cats, spotify, chakolab, laptop, book, glasses];
+  const photoArray = [a, b, c, d, e, f, g, h, i];
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [swipeDirection, setSwipeDirection] = useState('');
 
@@ -116,7 +126,6 @@ const About = () => {
           </div>
         </div>
       )}
-
 
       <section className='container' ref={sectionRefs[1]} data-index={1}>
         <div className='igpost-box'>
