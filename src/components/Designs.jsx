@@ -22,6 +22,17 @@ import cocofw from '../imgs/cocofw.png';
 import numoabe from '../imgs/numoabe.png';
 import pcare from '../imgs/pcare.png';
 
+import bestdressed2 from '../imgs/bestdressed2.png';
+import cupid4042 from '../imgs/1cupid404.png';
+import ars2 from '../imgs/ars2.png';
+import uniqlo2 from '../imgs/uniqlo2.png';
+import madebyfei2 from '../imgs/madebyfei2.png';
+import solarsphere2 from '../imgs/solarsphere2.png';
+import esphere2 from '../imgs/esphere2.png';
+import cocofw2 from '../imgs/cocofw2.png';
+import numoabe2 from '../imgs/numoabe2.png';
+import pcare2 from '../imgs/pcare2.png';
+
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Designs = () => {
@@ -50,70 +61,80 @@ const Designs = () => {
       technologies: "ReactJS, React Native, Node.js, MongoDB",
       type: "Capstone Project",
       mode: "Groupings",
-      image: solarsphere
+      expandedImage: solarsphere,
+      defaultImage: solarsphere2,
     },
     {
       name: "Made By Fei",
       technologies: "HTML, CSS, ReactJS",
       type: "Full Stack Development",
       mode: "Individual",
-      image: madebyfei
+      expandedImage: madebyfei,
+      defaultImage: madebyfei2,
     },
     {
       name: "ExploreSphere",
       technologies: "ReactJS, Figma",
       type: "Front-end Development",
       mode: "Groupings",
-      image: esphere
+      expandedImage: esphere,
+      defaultImage: esphere2,
     },
     {
       name: "Pawsitive Care",
       technologies: "Java, Figma, Android Studio",
       type: "Full Stack Development",
       mode: "Individual",
-      image: pcare
+      expandedImage: pcare,
+      defaultImage: pcare2,
     },
     {
       name: "NU MOA Bulldogs Exchange",
       technologies: "Figma, ReactJS, MongoDB",
       type: "Full Stack Development",
       mode: "Groupings",
-      image: numoabe
+      expandedImage: numoabe,
+      defaultImage: numoabe2,
     },
     {
       name: "EcoAir",
       technologies: "Java, Netbeans, Canva",
       type: "Full Stack Development",
       mode: "Groupings",
-      image: ars
+      expandedImage: ars,
+      defaultImage: ars2,
     },
     {
       name: "Uniqlo Inventory System",
       technologies: "Java, Netbeans, Canva",
       type: "Full Stack Development",
       mode: "Individual",
-      image: uniqlo
+      expandedImage: uniqlo,
+      defaultImage: uniqlo2,
     },
     {
       name: "COCO Fashion Week 2025",
       technologies: "Figma",
       type: "UI/UX Design",
       mode: "Individual",
-      image: cocofw
+      expandedImage: cocofw,
+      defaultImage: cocofw2,
     },
     {
       name: "Cupid 404",
       technologies: "Figma",
       type: "UI/UX Design",
       mode: "Individual",
-      image: cupid404
+      expandedImage: cupid404,
+      defaultImage: cupid4042,
     },
     {
       name: "Best Dressed Voting System",
       technologies: "Figma",
       type: "UI/UX Design",
       mode: "Individual",
-      image: bestdressed
+      expandedImage: bestdressed,
+      defaultImage: bestdressed2,
     }
   ];
 
@@ -167,17 +188,21 @@ const Designs = () => {
                   className={`work ${expandedIndex === index ? 'expanded' : ''}`}
                   onClick={() => handleExpand(index)}
                   style={{
-                    backgroundImage: `url(${design.image})`,
+                    backgroundImage: `url(${expandedIndex === index ? design.expandedImage : design.defaultImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                   }}
+
                 >
                   <p className="work-duration">{design.type}</p>
-                  <div className='work-bottominfo'>
+                  <div
+                    className={`work-bottominfo ${expandedIndex === index ? 'hidden' : ''}`}
+                  >
                     <h4 className="work-name">{design.name} | {design.mode}</h4>
                     <p className="work-tech">{design.technologies}</p>
                   </div>
+
                 </div>
 
               ))}

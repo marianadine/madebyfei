@@ -69,6 +69,11 @@
     margin-top: auto;
 }
 
+.hidden {
+  display: none;
+}
+
+
 .work-name {
     font-size: 24px;
     font-weight: 700;
