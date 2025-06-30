@@ -119,10 +119,18 @@ const Home = () => {
           <div className='section4-card'>
             <h2 className='section4-heading'>Say Hello!</h2>
             <div className='section4-icons'>
-              <img className='contacts-logo' src={ghublogo} alt="GitHub" />
-              <img className='contacts-logo' src={fblogo} alt="Facebook" />
-              <img className='contacts-logo' src={iglogo} alt="Instagram" />
-              <img className='contacts-logo' src={linlogo} alt="LinkedIn" />
+              <a href="https://github.com/marianadine" target="_blank" rel="noopener noreferrer">
+                <img className='contacts-logo' src={ghublogo} alt="GitHub" />
+              </a>
+              <a href="https://www.facebook.com/mariaafeii" target="_blank" rel="noopener noreferrer">
+                <img className='contacts-logo' src={fblogo} alt="Facebook" />
+              </a>
+              <a href="https://www.instagram.com/ae.feyy/" target="_blank" rel="noopener noreferrer">
+                <img className='contacts-logo' src={iglogo} alt="Instagram" />
+              </a>
+              <a href="https://www.linkedin.com/in/marianadine0912" target="_blank" rel="noopener noreferrer">
+                <img className='contacts-logo' src={linlogo} alt="LinkedIn" />
+              </a>
             </div>
             <p className='section4-text'>
               I’m always up for a good dev chat, a design collab, or just geeking<br />
