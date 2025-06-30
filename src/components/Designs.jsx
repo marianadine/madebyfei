@@ -42,6 +42,28 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const Designs = () => {
   const [activeSection, setActiveSection] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const checkScrollButtons = () => {
+    const el = worksContainerRef.current;
+    if (!el) return;
+
+    const scrollLeftPos = el.scrollLeft;
+    const maxScrollLeft = el.scrollWidth - el.clientWidth;
+
+    setCanScrollLeft(scrollLeftPos > 0);
+    setCanScrollRight(scrollLeftPos < maxScrollLeft);
+  };
+
+  useEffect(() => {
+    const el = worksContainerRef.current;
+    if (!el) return;
+
+    el.addEventListener('scroll', checkScrollButtons);
+    checkScrollButtons(); // initial check
+
+    return () => el.removeEventListener('scroll', checkScrollButtons);
+  }, []);
 
   const sectionRefs = [useRef(), useRef(), useRef()];
   const worksContainerRef = useRef();
@@ -194,12 +216,25 @@ const Designs = () => {
           <div className='section1-oneline' style={{ alignItems: 'center' }}>
             <p className='works-heading' style={{ marginRight: 40 }}>HER WORKS</p>
             <div style={{ display: 'flex', gap: '10px' }}>
-              <button className="scroll-icon left" onClick={scrollLeft} aria-label="Scroll left">
+              <button
+                className="scroll-icon left"
+                onClick={scrollLeft}
+                aria-label="Scroll left"
+                disabled={!canScrollLeft}
+                style={{ opacity: canScrollLeft ? 1 : 0.4, cursor: canScrollLeft ? 'pointer' : 'default' }}
+              >
                 <FaChevronLeft size={30} />
               </button>
-              <button className="scroll-icon right" onClick={scrollRight} aria-label="Scroll right">
+              <button
+                className="scroll-icon right"
+                onClick={scrollRight}
+                aria-label="Scroll right"
+                disabled={!canScrollRight}
+                style={{ opacity: canScrollRight ? 1 : 0.4, cursor: canScrollRight ? 'pointer' : 'default' }}
+              >
                 <FaChevronRight size={30} />
               </button>
+
             </div>
           </div>
           <div className="works-scroll-wrapper" style={{ maxWidth: '2000px', overflowX: 'auto' }}>
