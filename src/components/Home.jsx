@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Home.css';
 import '../styles/CommonStyles.css';
 import ScrollIndicator from './ScrollIndicator';
@@ -24,6 +25,8 @@ import numoabe2 from '../imgs/numoabe2.png';
 import { FaCheck } from "react-icons/fa";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
   const designImages = [
@@ -67,6 +70,8 @@ const Home = () => {
     );
   };
 
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="scroll-container">
       <ScrollIndicator sections={4} activeSection={activeSection} />
@@ -94,11 +99,29 @@ const Home = () => {
 
           <div className='section2-footer'>
             <p className='section2-footerp'>*and lowkey willing to learn backend too</p>
-            <button className='button-style'>Why Frontend Development?</button>
+            <button
+              className='button-style'
+              onClick={() => setShowModal(true)}
+            >
+              Why Frontend Development?
+            </button>
           </div>
         </div>
       </section>
 
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className='modal-border'>
+              <img className='modal-logo' src={logo} />
+            <h2 className='modal-question'>Why Frontend Development?</h2>
+            <p className='modal-answer'>
+              I love frontend development because it’s where design meets technology — I get to bring ideas to life with interactive, beautiful user interfaces. Seeing designs turn into functional, engaging experiences for users is incredibly satisfying. It’s a blend of creativity and problem-solving that I find endlessly exciting!
+            </p>
+              </div>
+          </div>
+        </div>
+      )}
 
       <section className='container' ref={sectionRefs[2]} data-index={2}>
         <div className='section3-wrapper'>
@@ -134,7 +157,12 @@ const Home = () => {
 
           <p className='right-caption'>*she coded, she styled, she deployed</p>
         </div>
-        <button className='viewall-style'>View All</button>
+        <button
+          className='viewall-style'
+          onClick={() => navigate('/designs')}
+        >
+          View All
+        </button>
 
       </section>
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import '../styles/About.css';
 import '../styles/CommonStyles.css';
 import ScrollIndicator from './ScrollIndicator';
+import logo from '../imgs/logoblue.png';
 
 import igpfp from '../imgs/igpfp.jpg';
 import camera from '../imgs/camera.png';
@@ -81,13 +82,15 @@ const About = () => {
     }} />
   );
 
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="scroll-container">
       <ScrollIndicator sections={3} activeSection={activeSection} />
 
       <section style={{ alignItems: 'flex-start' }} className='container' ref={sectionRefs[0]} data-index={0}>
         <div style={{ marginLeft: '200px' }}>
-          <button style={{ marginBottom: '40px' }} className='button-style'>Why take BSIT-MWA?</button>
+          <button style={{ marginBottom: '40px' }} className='button-style' onClick={() => setShowModal(true)}>Why take BSIT-MWA?</button>
 
           <p className='section1-heading'>KNOW</p>
           <p className='section1-heading'>
@@ -99,6 +102,20 @@ const About = () => {
           <p style={{ marginTop: '40px' }} className='section1-p'>see what a girl can do with her 4-year degree</p>
         </div>
       </section>
+
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className='modal-border'>
+              <img className='modal-logo' src={logo} alt="Logo" />
+              <h2 className='modal-question'>Why take BSIT-MWA?</h2>
+              <p className='modal-answer'>
+                Choosing BSIT-MWA was a no-brainer for me — it’s the perfect program to deepen my skills in both design and web technologies. I wanted to gain hands-on experience with modern web applications while exploring how to build engaging, user-centered digital experiences. This track lets me combine my passion for creative interfaces with solid technical foundations, preparing me for a future in frontend development and beyond.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
 
       <section className='container' ref={sectionRefs[1]} data-index={1}>

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import '../styles/Designs.css';
 import '../styles/CommonStyles.css';
 import ScrollIndicator from './ScrollIndicator';
+import logo from '../imgs/logoblue.png';
 
 import toggle from '../imgs/toggle.png';
 import halfcircle from '../imgs/halfcircle.png';
@@ -9,7 +10,6 @@ import cxc from '../imgs/cxc.png';
 import circle from '../imgs/circle.png';
 import mouse from '../imgs/mouse.png';
 import sketch from '../imgs/sketch.png';
-import tempImage from '../imgs/toggle.png';
 
 import bestdressed from '../imgs/bestdressed.png';
 import cupid404 from '../imgs/cupid404.png';
@@ -172,13 +172,15 @@ const Designs = () => {
     setExpandedIndex(expandedIndex === index ? null : index);
   };
 
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="scroll-container">
       <ScrollIndicator sections={3} activeSection={activeSection} />
 
       <section style={{ alignItems: 'flex-start' }} className='container' ref={sectionRefs[0]} data-index={0}>
         <div style={{ marginLeft: '100px' }}>
-          <button style={{ marginBottom: '40px' }} className='button-style'>Why I love frontend development?</button>
+          <button style={{ marginBottom: '40px' }} className='button-style' onClick={() => setShowModal(true)}>Why I love frontend development?</button>
           <div className='section1-oneline' style={{ alignItems: 'center' }}>
             <p className='works-heading' style={{ marginRight: 40 }}>HER WORKS</p>
             <div style={{ display: 'flex', gap: '10px' }}>
@@ -221,6 +223,19 @@ const Designs = () => {
         </div>
       </section>
 
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className='modal-border'>
+              <img className='modal-logo' src={logo} alt="Logo" />
+              <h2 className='modal-question'>Why I love frontend development?</h2>
+              <p className='modal-answer'>
+                Frontend development lets me turn creative ideas into real, interactive experiences that people can see and use. I love crafting interfaces that are not just beautiful, but also intuitive and enjoyable for users. It’s rewarding to solve design challenges and see my work come alive on the screen, blending art and code to make something meaningful.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <section className='container' ref={sectionRefs[1]} data-index={1}>
         <div style={{ margin: '150px', marginTop: '-50px', width: '90%' }}>
