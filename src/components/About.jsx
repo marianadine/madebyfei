@@ -23,9 +23,12 @@ import f from '../imgs/6.png';
 import g from '../imgs/7.png';
 import h from '../imgs/8.png';
 import i from '../imgs/9.png';
+import j from '../imgs/10.png';
+import k from '../imgs/11.png';
+import l from '../imgs/12.png';
 
 const About = () => {
-  const photoArray = [a, b, c, d, e, f, g, h, i];
+  const photoArray = [a, b, c, d, e, f, g, h, i, j, k, l];
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [swipeDirection, setSwipeDirection] = useState('');
 
