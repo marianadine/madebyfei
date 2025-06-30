@@ -11,11 +11,32 @@ import iglogo from '../imgs/iglogo.png';
 import fblogo from '../imgs/fblogo.png';
 import ghublogo from '../imgs/ghublogo.png';
 
+import bestdressed2 from '../imgs/bestdressed2.png';
+import cupid4042 from '../imgs/1cupid404.png';
+import ars2 from '../imgs/ars2.png';
+import pcare2 from '../imgs/pcare2.png';
+import madebyfei2 from '../imgs/madebyfei2.png';
+import solarsphere2 from '../imgs/solarsphere2.png';
+import esphere2 from '../imgs/esphere2.png';
+import cocofw2 from '../imgs/cocofw2.png';
+import numoabe2 from '../imgs/numoabe2.png';
+
 import { FaCheck } from "react-icons/fa";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
+  const designImages = [
+    solarsphere2,
+    madebyfei2,
+    esphere2,
+    ars2,
+    pcare2,
+    cocofw2,
+    cupid4042,
+    numoabe2,
+    bestdressed2,
+  ];
 
   useEffect(() => {
     const observerOptions = { root: null, threshold: 0.5 };
@@ -90,11 +111,16 @@ const Home = () => {
               <p>Click ‘View All’ to explore my full collection of designs.</p>
             </div>
             <div className='section3-grid'>
-              {Array.from({ length: 9 }, (_, index) => (
+              {designImages.map((imgSrc, index) => (
                 <div
                   key={index}
                   className={`section3-box ${selectedBoxes.includes(index) ? 'selected' : ''}`}
                   onClick={() => toggleBox(index)}
+                  style={{
+                    backgroundImage: `url(${imgSrc})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: '50% 40%'
+                  }}
                 >
                   {selectedBoxes.includes(index) && (
                     <div className="checkmark">

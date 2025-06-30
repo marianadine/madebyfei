@@ -87,6 +87,7 @@
     background-color: #e0e0e0;
     height: 180px;
     border-radius: 4px;
+    border: 1px solid #ddd;
 }
 
 .section3-box {

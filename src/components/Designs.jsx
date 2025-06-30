@@ -21,6 +21,7 @@ import esphere from '../imgs/esphere.png';
 import cocofw from '../imgs/cocofw.png';
 import numoabe from '../imgs/numoabe.png';
 import pcare from '../imgs/pcare.png';
+import atm from '../imgs/atm.png';
 
 import bestdressed2 from '../imgs/bestdressed2.png';
 import cupid4042 from '../imgs/1cupid404.png';
@@ -32,12 +33,13 @@ import esphere2 from '../imgs/esphere2.png';
 import cocofw2 from '../imgs/cocofw2.png';
 import numoabe2 from '../imgs/numoabe2.png';
 import pcare2 from '../imgs/pcare2.png';
+import atm2 from '../imgs/atm2.png';
 
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Designs = () => {
   const [activeSection, setActiveSection] = useState(0);
-  const [expandedIndex, setExpandedIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
   const sectionRefs = [useRef(), useRef(), useRef()];
   const worksContainerRef = useRef();
@@ -135,6 +137,14 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: bestdressed,
       defaultImage: bestdressed2,
+    },
+    {
+      name: "Money Mauve",
+      technologies: "Java, Figma",
+      type: "Full Stack & 1st Project",
+      mode: "Groupings",
+      expandedImage: atm,
+      defaultImage: atm2,
     }
   ];
 
