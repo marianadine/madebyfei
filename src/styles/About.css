@@ -6,6 +6,7 @@
 }
 
 .igpost-box {
+      position: relative;   
     background-color: transparent;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
     border: #000 1px solid;
@@ -44,9 +45,22 @@
 }
 
 .ig-camera {
-    width: 900px;
-    margin-left: -180px;
-    margin-top: 30px;
+  width: 900px;
+  margin-left: -180px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.ig-photo {
+  background-color: #000;
+  border-radius: 10px;
+  width: 490px;
+  height: 352px;
+  position: absolute;
+  top: 210px;
+  left: -4px;
+  z-index: 10000;
 }
 
 .section3-albumtitle {

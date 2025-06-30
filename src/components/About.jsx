@@ -108,6 +108,7 @@ const About = () => {
           </div>
 
           <img className='ig-camera' src={camera} />
+          <div className='ig-photo'></div>
 
           <p style={{ marginBottom: '-10px' }} className='igpost-p'>Liked by <span style={{ fontWeight: 600 }}>yes.you</span> and <span style={{ fontWeight: 600 }}>others</span></p>
           <p className='igpost-p'><span style={{ fontWeight: 600, marginRight: 15 }}>ae.feyy</span>what its like being an IT student
