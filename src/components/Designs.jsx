@@ -212,7 +212,7 @@ const Designs = () => {
                   style={{
                     backgroundImage: `url(${expandedIndex === index ? design.expandedImage : design.defaultImage})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: 'center',
+                    backgroundPosition: expandedIndex === index ? 'top' : 'center',
                     backgroundRepeat: 'no-repeat',
                   }}
 
