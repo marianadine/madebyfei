@@ -118,6 +118,7 @@
     font-weight: 600;
     border-bottom: #000 1px solid;
     padding-bottom: clamp(10px, 1.5vw, 20px);
+    margin-top: clamp(-10px, -5vw, -20px);
 }
 
 .section2-oneline {
