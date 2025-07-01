@@ -1,8 +1,8 @@
 .works-heading {
     font-weight: 800;
-    font-size: 96px;
+    font-size: clamp(64px, 6vw, 96px);
     margin: 0;
-    margin-top: -50px;
+    margin-top: clamp(-40px, -3vw, -50px);
 }
 
 .section1-oneline {
@@ -14,9 +14,9 @@
 
 .works-container {
     display: flex;
-    gap: 40px;
+    gap: clamp(20px, 3vw, 40px);
     overflow-x: auto;
-    padding-bottom: 20px;
+    padding-bottom: clamp(10px, 1.5vw, 20px);
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
@@ -29,39 +29,37 @@
 
 .work {
     flex: 0 0 auto;
-    min-width: 300px;
-    max-width: 300px;
-    height: 520px;
+    min-width: clamp(200px, 25vw, 300px);
+    max-width: clamp(200px, 25vw, 300px);
+    height: clamp(400px, 45vw, 520px);
     border: 1px solid #ddd;
-    border-radius: 20px;
+    border-radius: clamp(15px, 2vw, 20px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    padding: 20px 40px;
+    padding: clamp(15px, 2vw, 20px) clamp(25px, 4vw, 40px);
     cursor: pointer;
     transition: all 0.4s ease;
     scroll-snap-align: start;
     position: relative;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .work.expanded {
-    min-width: 910px;
-    max-width: 800px;
+    min-width: clamp(600px, 50vw, 910px);
+    max-width: clamp(600px, 50vw, 800px);
     background-color: #e0e0e0;
 }
 
 .work-duration {
     position: absolute;
-    top: 10px;
-    right: 30px;
-    font-size: 18px;
+    top: clamp(8px, 1vw, 10px);
+    right: clamp(20px, 2vw, 30px);
+    font-size: clamp(14px, 1.5vw, 18px);
     font-weight: bold;
-
     border: #000 1px solid;
-    border-radius: 20px;
-    padding: 5px 15px;
+    border-radius: clamp(15px, 2vw, 20px);
+    padding: clamp(4px, 0.6vw, 5px) clamp(10px, 1.2vw, 15px);
     background-color: #fff;
 }
 
@@ -73,17 +71,16 @@
     display: none;
 }
 
-
 .work-name {
-    font-size: 24px;
+    font-size: clamp(18px, 2.5vw, 24px);
     font-weight: 700;
-    margin-top: 50px;
-    margin-bottom: 10px;
+    margin-top: clamp(30px, 5vw, 50px);
+    margin-bottom: clamp(8px, 1vw, 10px);
 }
 
 .work-tech {
-    font-size: 18px;
-    margin-top: 6px;
+    font-size: clamp(14px, 1.8vw, 18px);
+    margin-top: clamp(4px, 0.5vw, 6px);
 }
 
 .works-scroll-wrapper {
@@ -100,7 +97,7 @@
     cursor: pointer;
     color: #000;
     z-index: 10;
-    padding: 10px;
+    padding: clamp(8px, 1vw, 10px);
     transition: color 0.3s ease;
 }
 
@@ -109,27 +106,18 @@
 }
 
 .scroll-icon.left {
-    margin-right: 10px;
+    margin-right: clamp(8px, 1vw, 10px);
 }
 
 .scroll-icon.right {
-    margin-left: 10px;
-}
-
-.works-container {
-    display: flex;
-    gap: 40px;
-    overflow-x: auto;
-    padding-bottom: 20px;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    margin-left: clamp(8px, 1vw, 10px);
 }
 
 .section2-headingtypo {
-    font-size: 64px;
+    font-size: clamp(40px, 4.5vw, 64px);
     font-weight: 600;
     border-bottom: #000 1px solid;
-    padding-bottom: 20px;
+    padding-bottom: clamp(10px, 1.5vw, 20px);
 }
 
 .section2-oneline {
@@ -137,44 +125,44 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 150px;
-    margin-bottom: -300px;
-    margin-top: -130px;
+    gap: clamp(80px, 10vw, 150px);
+    margin-bottom: clamp(-250px, -18vw, -300px);
+    margin-top: clamp(-150px, -10vw, -130px);
 }
 
 .section2-fontnamemain {
-    font-size: 150px;
+    font-size: clamp(100px, 12vw, 150px);
     font-weight: 400;
     background-color: #E1F1FF;
-    width: 600px;
+    width: clamp(400px, 40vw, 600px);
     border-right: #4077DE 5px solid;
 }
 
 .section2-fontname {
-    font-size: 150px;
+    font-size: clamp(100px, 12vw, 150px);
     font-weight: 400;
 }
 
 .section2-explanation {
-    margin-top: 50px;
+    margin-top: clamp(150px, 4vw, 50px);
     text-align: center;
-    width: 60%;
-    font-size: 18px;
+    width: clamp(50%, 60%, 65%);
+    font-size: clamp(14px, 1.8vw, 18px);
 }
 
 .workflow-oneline {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 50px;
+    gap: clamp(30px, 5vw, 50px);
 }
 
 .workflow-heading {
     background-color: transparent;
     border: #000 2px solid;
-    border-radius: 200px;
-    font-size: 96px;
-    padding: 0px 30px;
+    border-radius: clamp(100px, 15vw, 200px);
+    font-size: clamp(64px, 7vw, 96px);
+    padding: 0 clamp(20px, 2.5vw, 30px);
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -187,17 +175,90 @@
 
 .workflow-container {
     border: #000 2px solid;
-    padding: 50px;
-    border-radius: 50px;
-    margin-bottom: -50px;
+    padding: clamp(30px, 4vw, 50px);
+    border-radius: clamp(30px, 5vw, 50px);
+    margin-bottom: clamp(-40px, -5vw, -50px);
 }
 
 .workflow-explanation {
-    font-size: 20px;
-    width: 70%;
+    font-size: clamp(16px, 2vw, 20px);
+    width: clamp(60%, 70%, 80%);
 }
 
 .workflow-title {
     font-weight: 700;
-    font-size: 96px;
+    font-size: clamp(64px, 7vw, 96px);
+}
+
+/* 📱 Responsive scaling for ~125% zoom or narrower screens */
+@media screen and (max-width: 1440px) {
+    .works-heading {
+        font-size: 80px;
+        margin-top: -40px;
+    }
+
+    .work {
+        min-width: 260px;
+        max-width: 260px;
+        height: 450px;
+        padding: 15px 30px;
+    }
+
+    .work.expanded {
+        min-width: 750px;
+        max-width: 750px;
+    }
+
+    .work-duration {
+        font-size: 16px;
+        right: 20px;
+    }
+
+    .work-name {
+        font-size: 20px;
+        margin-top: 40px;
+    }
+
+    .work-tech {
+        font-size: 16px;
+    }
+
+    .section2-headingtypo {
+        font-size: 52px;
+        padding-bottom: 15px;
+    }
+
+    .section2-oneline {
+        gap: 100px;
+        margin-bottom: -200px;
+        margin-top: -100px;
+    }
+
+    .section2-fontnamemain,
+    .section2-fontname {
+        font-size: 120px;
+        width: 500px;
+    }
+
+    .section2-explanation {
+        font-size: 16px;
+        width: 65%;
+    }
+
+    .workflow-heading {
+        font-size: 80px;
+        padding: 0 25px;
+    }
+
+    .workflow-container {
+        padding: 40px;
+    }
+
+    .workflow-explanation {
+        font-size: 18px;
+    }
+
+    .workflow-title {
+        font-size: 80px;
+    }
 }

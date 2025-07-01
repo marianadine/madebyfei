@@ -103,7 +103,7 @@ const About = () => {
 
       <section style={{ alignItems: 'flex-start' }} className='container' ref={sectionRefs[0]} data-index={0}>
         <div style={{ marginLeft: '200px' }}>
-          <button style={{ marginBottom: '40px' }} className='button-style' onClick={() => setShowModal(true)}>Why take BSIT-MWA?</button>
+          <button style={{ marginBottom: '30px' }} className='button-style' onClick={() => setShowModal(true)}>Why take BSIT-MWA?</button>
 
           <p className='section1-heading'>KNOW</p>
           <p className='section1-heading'>
@@ -112,7 +112,7 @@ const About = () => {
           <p className='section1-heading'>
             M<StyledE2 />? HER?
           </p>
-          <p style={{ marginTop: '40px' }} className='section1-p'>see what a girl can do with her 4-year degree</p>
+          <p style={{ marginTop: '-20px' }} className='section1-p'>see what a girl can do with her 4-year degree</p>
         </div>
       </section>
 
