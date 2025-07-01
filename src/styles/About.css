@@ -1,8 +1,7 @@
 .section1-heading {
-    font-size: 150px;
+    font-size: clamp(80px, 10vw, 150px);
     font-weight: 800;
-    margin: -60px;
-    margin-left: 0;
+    margin: clamp(-40px, -5vw, -60px) 0 0 0;
 }
 
 .igpost-box {
@@ -10,56 +9,56 @@
     background-color: transparent;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.1);
     border: #000 1px solid;
-    border-radius: 30px;
-    width: 430px;
-    padding: 20px 30px;
+    border-radius: clamp(20px, 4vw, 30px);
+    width: clamp(300px, 40vw, 430px);
+    padding: clamp(15px, 3vw, 20px) clamp(20px, 5vw, 30px);
 }
 
 .igpost-header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: clamp(10px, 2vw, 20px);
 }
 
 .igpfp {
-    width: 60px;
-    height: 60px;
+    width: clamp(40px, 6vw, 60px);
+    height: clamp(40px, 6vw, 60px);
     border-radius: 50%;
 }
 
 .ig-uname {
     font-weight: 600;
-    font-size: 18px;
-    margin-bottom: -15px;
+    font-size: clamp(14px, 2.5vw, 18px);
+    margin-bottom: clamp(-10px, -1.5vw, -15px);
 }
 
 .ig-location {
     font-weight: 500;
-    font-size: 11px;
+    font-size: clamp(9px, 1.5vw, 11px);
 }
 
 .igpost-p {
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px);
     width: 95%;
 }
 
 .ig-camera {
-    width: 900px;
-    margin-left: -180px;
-    margin-top: 30px;
+    width: clamp(500px, 70vw, 900px);
+    margin-left: clamp(-180px, -9.4vw, -120px);
+    margin-top: clamp(25px, 4vw, 20px);
     position: relative;
     z-index: 1;
 }
 
 .ig-photo {
     background-color: #000;
-    border-radius: 10px;
-    width: 490px;
-    height: 352px;
+    border-radius: clamp(8px, 2vw, 10px);
+    width: clamp(300px, 50vw, 490px);
+    height: clamp(200px, 35vw, 352px);
     position: absolute;
-    top: 210px;
-    left: -4px;
+    top: clamp(150px, 25vw, 210px);
+    left: clamp(-2px, -0.5vw, -4px);
     z-index: 10000;
     overflow: hidden;
 }
@@ -106,21 +105,23 @@
 .ig-previous-button,
 .ig-next-button {
     position: absolute;
-    top: 413px;
-    right: -170px;
-    padding: 20px;
+    top: clamp(300px, 50vw, 413px);
+    padding: clamp(12px, 3vw, 20px);
     background-color: rgba(200, 200, 200, 0.3);
     border: none;
     border-radius: 50%;
-    font-size: 16px;
+    font-size: clamp(12px, 2.5vw, 16px);
     cursor: pointer;
     z-index: 20000;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .ig-previous-button {
-    top: 413px;
-    right: -97px;
+    right: clamp(-98px, -7vw, -60px);
+}
+
+.ig-next-button {
+    right: clamp(-170px, -12vw, -140px);
 }
 
 .ig-previous-button:hover,
@@ -131,74 +132,74 @@
 
 .section3-albumtitle {
     font-weight: 700;
-    font-size: 60px;
-    margin-top: -20px;
+    font-size: clamp(30px, 8vw, 60px);
+    margin-top: clamp(-10px, -3vw, -20px);
 }
 
 .section3-albumtracks {
-    font-size: 16px;
+    font-size: clamp(12px, 2.5vw, 16px);
     width: 40%;
     text-align: center;
-    margin-top: 50px;
+    margin-top: clamp(30px, 6vw, 50px);
 }
 
 .starterpack-container {
     position: relative;
-    width: 1200px;
-    height: 500px;
+    width: clamp(600px, 90vw, 1200px);
+    height: clamp(300px, 40vw, 500px);
     margin: 0 auto;
 }
 
 .starterpack {
     position: absolute;
-    width: 200px;
+    width: clamp(100px, 16vw, 200px);
 }
 
 .starterpack-wrapper:nth-child(1) {
-    top: 20px;
-    left: 10px;
+    top: clamp(10px, 2vw, 20px);
+    left: clamp(5px, 1vw, 10px);
 }
 
 .starterpack-wrapper:nth-child(2) {
-    top: -10px;
-    left: 300px;
+    top: clamp(-5px, -1vw, -10px);
+    left: clamp(150px, 25vw, 300px);
 }
 
 .starterpack-wrapper:nth-child(3) {
-    top: 250px;
-    left: 150px;
+    top: clamp(125px, 20vw, 250px);
+    left: clamp(75px, 12vw, 150px);
 }
 
 .starterpack-wrapper:nth-child(4) {
-    top: 250px;
-    left: 460px;
+    top: clamp(125px, 20vw, 250px);
+    left: clamp(230px, 38vw, 460px);
 }
 
 .starterpack-wrapper:nth-child(5) {
-    top: 80px;
-    left: 600px;
+    top: clamp(40px, 6vw, 80px);
+    left: clamp(300px, 50vw, 600px);
 }
 
 .starterpack-wrapper:nth-child(6) {
-    top: 250px;
-    left: 800px;
+    top: clamp(125px, 20vw, 250px);
+    left: clamp(400px, 67vw, 800px);
 }
 
 .starterpack-wrapper:nth-child(7) {
-    top: 0px;
-    left: 950px;
+    top: clamp(0px, 0vw, 0px);
+    left: clamp(475px, 80vw, 950px);
 }
 
 .starterpack-wrapper:nth-child(2) .starterpack {
-    width: 150px;
+    width: clamp(100px, 12vw, 150px);
 }
 
 .starterpack-wrapper:nth-child(3) .starterpack,
 .starterpack-wrapper:nth-child(5) .starterpack,
 .starterpack-wrapper:nth-child(6) .starterpack,
 .starterpack-wrapper:nth-child(7) .starterpack {
-    width: 240px;
-    height: 200px;
+    width: clamp(150px, 20vw, 240px);
+    height: clamp(125px, 17vw, 200px);
     object-fit: cover;
 }
 
@@ -208,8 +209,8 @@
 
 .starterpack-number {
     position: absolute;
-    left: -20px;
-    font-size: 20px;
+    left: clamp(-12px, -2vw, -20px);
+    font-size: clamp(14px, 2.5vw, 20px);
     font-weight: 500;
     color: #000;
     text-shadow: 1px 1px 2px #fff;
