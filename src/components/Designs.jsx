@@ -259,9 +259,7 @@ const Designs = () => {
                     <h4 className="work-name">{design.name} | {design.mode}</h4>
                     <p className="work-tech">{design.technologies}</p>
                   </div>
-
                 </div>
-
               ))}
             </div>
           </div>
@@ -283,7 +281,7 @@ const Designs = () => {
       )}
 
       <section className='container' ref={sectionRefs[1]} data-index={1}>
-        <div style={{ margin: '150px', marginTop: '-50px', width: '90%' }}>
+        <div style={{ width: '90%' }}>
           <h3 className='section2-headingtypo'>Typography</h3>
           <div className='section2-oneline'>
             <h3 className='section2-fontnamemain'>Poppins</h3>
