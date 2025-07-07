@@ -23,3 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 .vercel
+
+# .gitignore
+.env
+.env.local
+.env.development
+.env.production
