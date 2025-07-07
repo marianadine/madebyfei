@@ -30,26 +30,6 @@ import { FaCheck } from "react-icons/fa";
 const Home = () => {
   const navigate = useNavigate();
 
-  const logos = [logo1, logo2, logo3];
-  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
-  const [fade, setFade] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Fade out
-      setFade(false);
-
-      // After fade-out, switch logo & fade back in
-      setTimeout(() => {
-        setCurrentLogoIndex(prev => (prev + 1) % logos.length);
-        setFade(true);
-      }, 500); // half of transition duration
-    }, 3000); // every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-
   const [activeSection, setActiveSection] = useState(0);
   const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
   const designImages = [
@@ -97,6 +77,7 @@ const Home = () => {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [showGradient, setShowGradient] = useState(false);
+  const [trail, setTrail] = useState([]);
 
   return (
     <div className="scroll-container">
@@ -108,25 +89,35 @@ const Home = () => {
         data-index={0}
         onMouseMove={(e) => {
           const rect = e.currentTarget.getBoundingClientRect();
-          setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+          const newPos = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+          setMousePosition(newPos);
           setShowGradient(true);
+          setTrail((prev) => {
+            const updated = [...prev, { ...newPos, color: '#7CA9F9' }];
+            return updated.slice(-30);
+          });
         }}
         onMouseLeave={() => setShowGradient(false)}
       >
-        {showGradient && (
+        {showGradient && trail.map((point, idx) => (
           <div
+            key={idx}
             className="pointer-gradient"
             style={{
-              left: `${mousePosition.x}px`,
-              top: `${mousePosition.y}px`,
+              left: `${point.x}px`,
+              top: `${point.y}px`,
+              background: `radial-gradient(circle at center, ${point.color} 0%, transparent 70%)`,
+              opacity: (idx + 1) / trail.length,
+              transform: 'translate(-50%, -50%) scale(1.2)',
+              zIndex: -9999,
             }}
           />
-        )}
+        ))}
 
         <p className='section1-p'>she really said ‘I’m gonna make my portfolio.’</p>
         <img
-          className={`mainlogo simple-fade ${fade ? 'fade-in' : 'fade-out'}`}
-          src={logos[currentLogoIndex]}
+          className='mainlogo'
+          src={logo1}
           alt="Logo"
         />
         <p className='section1-p'>designs that click. literally.</p>
