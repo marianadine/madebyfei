@@ -5,9 +5,6 @@ import '../styles/CommonStyles.css';
 import ScrollIndicator from './ScrollIndicator';
 
 import logo from '../imgs/logoblue.png';
-import logo1 from '../imgs/logoblue.png';
-import logo2 from '../imgs/logored.png';
-import logo3 from '../imgs/logogreen.png';
 import me from '../imgs/section2me.png';
 import section4bg from '../imgs/section4bg.png';
 import linlogo from '../imgs/linlogo.png';
@@ -117,7 +114,7 @@ const Home = () => {
         <p className='section1-p'>she really said ‘I’m gonna make my portfolio.’</p>
         <img
           className='mainlogo'
-          src={logo1}
+          src={logo}
           alt="Logo"
         />
         <p className='section1-p'>designs that click. literally.</p>
