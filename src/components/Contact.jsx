@@ -11,11 +11,10 @@ const Contact = () => {
 
     const handleCloseModal = () => setModal({ visible: false, message: '', isError: false });
 
-    // ⏱️ Auto-close modal after 3 seconds
     useEffect(() => {
         if (modal.visible) {
             const timer = setTimeout(() => handleCloseModal(), 3000);
-            return () => clearTimeout(timer); // cleanup on unmount or next modal
+            return () => clearTimeout(timer);
         }
     }, [modal.visible]);
 
@@ -73,7 +72,7 @@ const Contact = () => {
                                 isError: !response.success,
                             });
                             if (response.success && formRef.current) {
-                                formRef.current.reset(); // clear inputs on success
+                                formRef.current.reset();
                             }
                         })
                         .catch(() => {
