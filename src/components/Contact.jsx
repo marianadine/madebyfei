@@ -1,9 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../styles/Contact.css';
+import logo from '../imgs/logoblue.png';
 
 const Contact = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [showGradient, setShowGradient] = useState(false);
+    const [trail, setTrail] = useState([]);
+
     return (
-        <div className='contact-container'>
+        <div
+            className='contact-container'
+            onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const newPos = { x: e.clientX - rect.left, y: e.clientY - rect.top };
+                setMousePosition(newPos);
+                setShowGradient(true);
+                setTrail((prev) => {
+                    const updated = [...prev, { ...newPos, color: '#7CA9F9' }];
+                    return updated.slice(-30);
+                });
+            }}
+            onMouseLeave={() => setShowGradient(false)}
+        >
+            {showGradient && trail.map((point, idx) => (
+                <div
+                    key={idx}
+                    className="pointer-gradient"
+                    style={{
+                        left: `${point.x}px`,
+                        top: `${point.y}px`,
+                        background: `radial-gradient(circle at center, ${point.color} 0%, transparent 70%)`,
+                        opacity: (idx + 1) / trail.length,
+                        transform: 'translate(-50%, -50%) scale(1.2)',
+                        zIndex: -9999,
+                    }}
+                />
+            ))}
+
+            <img
+                className='contactlogo'
+                src={logo}
+                alt="Logo"
+            />
             <form
                 className='contact-form'
                 onSubmit={(e) => {
@@ -20,15 +58,14 @@ const Contact = () => {
                     })
                         .then((res) => res.json())
                         .then((response) => alert(response.message))
-                        .catch((error) => alert('Error sending message.'));
+                        .catch(() => alert('Error sending message.'));
                 }}
             >
-                <input name="name" placeholder="Your name" required />
-                <input type="email" name="email" placeholder="Your email" required />
-                <textarea name="message" placeholder="Your message" required />
-                <button type="submit">Send Message</button>
+                <input className='inputs' name="name" placeholder="e.g. Nadine Rufo" required />
+                <input className='inputs' type="email" name="email" placeholder="youremail@gmail.com" required />
+                <textarea className='inputs' name="message" rows={8} placeholder="Your message" required />
+                <button className='contactbutton-style' type="submit">Send Message</button>
             </form>
-
         </div>
     )
 }
