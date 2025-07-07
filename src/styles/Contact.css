@@ -1,7 +1,72 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .contact-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: 50px;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+    overflow: hidden;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20rem;
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 40%;
+}
+
+.inputs {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contactlogo {
+    width: 25%;
+    margin-bottom: 2rem;
+}
+
+.contactbutton-style {
+    background-color: transparent;
+    padding: clamp(6px, 1.5vw, 8px) clamp(10px, 3vw, 15px);
+    border: 1px #ccc solid;
+    border-radius: clamp(15px, 4vw, 20px);
+    font-weight: 500;
+    font-size: clamp(14px, 1vw, 16px);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contactbutton-style:hover {
+    background-color: #4077DE;
+    color: #fff;
 }
