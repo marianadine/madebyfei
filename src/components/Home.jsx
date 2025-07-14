@@ -23,12 +23,26 @@ import cocofw2 from '../imgs/cocofw2.png';
 import numoabe2 from '../imgs/numoabe2.png';
 
 import { FaCheck } from "react-icons/fa";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faJs,
+  faReact,
+  faHtml5,
+  faCss3Alt,
+  faFigma,
+  faNodeJs,
+  faGithub,
+  faAndroid,
+} from '@fortawesome/free-brands-svg-icons';
+import { faPaintBrush, faCode, faServer, faLaptopCode } from '@fortawesome/free-solid-svg-icons';
+
+import { motion } from 'framer-motion';
 
 const Home = () => {
   const navigate = useNavigate();
 
   const [activeSection, setActiveSection] = useState(0);
-  const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
+  const sectionRefs = [useRef(), useRef(), useRef(), useRef(), useRef()];
   const designImages = [
     solarsphere2,
     madebyfei2,
@@ -40,6 +54,23 @@ const Home = () => {
     numoabe2,
     bestdressed2,
   ];
+
+  const techStack = [
+    { name: "JavaScript", icon: faJs, color: "#f7df1e" },
+    { name: "React", icon: faReact, color: "#61DBFB" },
+    { name: "React Native", icon: faReact, color: "#61DBFB" },
+    { name: "HTML", icon: faHtml5, color: "#e34c26" },
+    { name: "CSS", icon: faCss3Alt, color: "#264de4" },
+    { name: "Figma", icon: faFigma, color: "#f24e1e" },
+    { name: "Canva", icon: faPaintBrush, color: "#00c4cc" },
+    { name: "VS Code", icon: faLaptopCode, color: "#007ACC" },
+    { name: "Android Studio", icon: faAndroid, color: "#3DDC84" },
+    { name: "GitHub", icon: faGithub, color: "#000000" },
+    { name: "Node.js", icon: faNodeJs, color: "#68A063" },
+    { name: "Express", icon: faServer, color: "#000000" },
+    { name: "MongoDB", icon: faGithub, color: "#4DB33D" },
+  ];
+
 
   useEffect(() => {
     const observerOptions = { root: null, threshold: 0.5 };
@@ -76,9 +107,35 @@ const Home = () => {
   const [showGradient, setShowGradient] = useState(false);
   const [trail, setTrail] = useState([]);
 
+  const techStackRef = useRef(null);
+  const [animateTechStack, setAnimateTechStack] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          const index = Number(entry.target.dataset.index);
+          if (entry.isIntersecting) {
+            setActiveSection(index);
+            if (index === 3) {
+              setAnimateTechStack(true);
+            }
+          }
+        });
+      },
+      { root: null, threshold: 0.4 }
+    );
+
+    sectionRefs.forEach(ref => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+  const techStackContainerRef = useRef(null);
+
   return (
     <div className="scroll-container">
-      <ScrollIndicator sections={4} activeSection={activeSection} />
+      <ScrollIndicator sections={5} activeSection={activeSection} />
 
       <section
         className='container section1-container'
@@ -204,12 +261,53 @@ const Home = () => {
 
       </section>
 
-      <section className='container' ref={sectionRefs[3]} data-index={3}>
-        <div className='section4-container'>
-          <img className='section4-bg' src={section4bg} alt="Background" />
-          <div className='section4-card'>
-            <h2 className='section4-heading'>Say Hello!</h2>
-            <div className='section4-icons'>
+      <section className="container" ref={sectionRefs[3]} data-index={3}>
+        <div style={{ marginLeft: '0', marginTop: '100px' }}
+          className={`section4-container ${animateTechStack ? 'animate' : ''}`}
+          ref={techStackContainerRef}
+        >
+          <div style={{ marginTop: '-150px' }} className="section4-left">
+            <h3>What I Use</h3>
+            <p className="section4-p">
+              I’m all about crafting seamless user experiences with a sprinkle of creativity. Here’s the tech I use to bring my designs to life:
+            </p>
+          </div>
+          <div className="section4-techstack" ref={techStackRef}>
+            {techStack.map((tech, index) => (
+              <motion.div
+                key={index}
+                className="tech-pill"
+                initial={{ y: -500, opacity: 0, rotate: Math.random() * 30 - 15 }}
+                animate={animateTechStack ? { y: 0, opacity: 1, rotate: 0 } : {}}
+                transition={{
+                  delay: index * 0.1,
+                  type: 'spring',
+                  stiffness: 120,
+                  damping: 12
+                }}
+                drag
+                dragMomentum
+                whileTap={{ scale: 1.1 }}
+                dragConstraints={techStackContainerRef}
+              >
+                <FontAwesomeIcon
+                  icon={tech.icon}
+                  className="tech-icon"
+                  style={{ color: tech.color }}
+                />
+                <span>{tech.name}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className='container' ref={sectionRefs[4]} data-index={4}>
+        <div className='section5-container'>
+          <img className='section5-bg' src={section4bg} alt="Background" />
+          <div className='section5-card'>
+            <h2 className='section5-heading'>Say Hello!</h2>
+            <div className='section5-icons'>
               <a href="https://github.com/marianadine" target="_blank" rel="noopener noreferrer">
                 <img className='contacts-logo' src={ghublogo} alt="GitHub" />
               </a>
@@ -223,7 +321,7 @@ const Home = () => {
                 <img className='contacts-logo' src={linlogo} alt="LinkedIn" />
               </a>
             </div>
-            <p className='section4-text'>
+            <p className='section5-text'>
               I’m always up for a good dev chat, a design collab, or just geeking<br />
               out over frontend tools. Let’s talk! Have something creative in<br />
               mind? Hit me up at: nadinerufo7@gmail.com
