@@ -33,7 +33,7 @@ const About = () => {
   const [swipeDirection, setSwipeDirection] = useState('');
 
   const [activeSection, setActiveSection] = useState(0);
-  const sectionRefs = [useRef(), useRef(), useRef(), useRef()];
+  const sectionRefs = [useRef(), useRef(), useRef()];
 
   useEffect(() => {
     const observerOptions = { root: null, threshold: 0.5 };
@@ -99,7 +99,7 @@ const About = () => {
 
   return (
     <div className="scroll-container">
-      <ScrollIndicator sections={4} activeSection={activeSection} />
+      <ScrollIndicator sections={3} activeSection={activeSection} />
 
       <section style={{ alignItems: 'flex-start' }} className='container' ref={sectionRefs[0]} data-index={0}>
         <div style={{ marginLeft: '200px' }}>
@@ -208,10 +208,10 @@ const About = () => {
 
         <p className='section3-albumtracks'>the cats, of course/spotify for the vibes/laptop, obviously/glasses so I can actually see/a book to keep me sane/drink your water/top albums on repeat</p>
       </section>
-
+{/* 
       <section className='container' ref={sectionRefs[3]} data-index={3}>
         <h3>JPCS NU MOA</h3>
-      </section>
+      </section> */}
 
     </div>
   )
