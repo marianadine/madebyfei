@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Contact.css';
 import logo from '../imgs/logoblue.png';
+import ScrollIndicator from './ScrollIndicator';
+
+import { FaDownload } from "react-icons/fa";
 
 const Contact = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [showGradient, setShowGradient] = useState(false);
-    const [trail, setTrail] = useState([]);
     const [modal, setModal] = useState({ visible: false, message: '', isError: false });
     const formRef = useRef(null);
 
@@ -18,99 +18,111 @@ const Contact = () => {
         }
     }, [modal.visible]);
 
+    const [activeSection, setActiveSection] = useState(0);
+    const sectionRefs = [useRef(), useRef()];
+
+    useEffect(() => {
+        const observerOptions = { root: null, threshold: 0.5 };
+        const observerCallback = entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Number(entry.target.dataset.index);
+                    setActiveSection(index);
+                }
+            });
+        };
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+        sectionRefs.forEach(ref => {
+            if (ref.current) observer.observe(ref.current);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <div
-            className='contact-container'
-            onMouseMove={(e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const newPos = { x: e.clientX - rect.left, y: e.clientY - rect.top };
-                setMousePosition(newPos);
-                setShowGradient(true);
-                setTrail((prev) => {
-                    const updated = [...prev, { ...newPos, color: '#7CA9F9' }];
-                    return updated.slice(-30);
-                });
-            }}
-            onMouseLeave={() => setShowGradient(false)}
-        >
-            {showGradient && trail.map((point, idx) => (
-                <div
-                    key={idx}
-                    className="pointer-gradient"
-                    style={{
-                        left: `${point.x}px`,
-                        top: `${point.y}px`,
-                        background: `radial-gradient(circle at center, ${point.color} 0%, transparent 70%)`,
-                        opacity: (idx + 1) / trail.length,
-                        transform: 'translate(-50%, -50%) scale(1.2)',
-                        zIndex: -9999,
-                    }}
-                />
-            ))}
+        <div className='scroll-container'>
+            <ScrollIndicator sections={2} activeSection={activeSection} />
 
-            <img className='contactlogo' src={logo} alt="Logo" />
-            <form
-                ref={formRef}
-                className='contact-form'
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    const data = new FormData(e.target);
-                    fetch('/api/contact', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            name: data.get('name'),
-                            email: data.get('email'),
-                            message: data.get('message'),
-                        }),
-                    })
-                        .then((res) => res.json())
-                        .then((response) => {
-                            setModal({
-                                visible: true,
-                                message: response.message,
-                                isError: !response.success,
-                            });
-                            if (response.success && formRef.current) {
-                                formRef.current.reset();
-                            }
+            <section className='container' ref={sectionRefs[0]} data-index={0}>
+                <img className='contactlogo' src={logo} alt="Logo" />
+                <form
+                    ref={formRef}
+                    className='contact-form'
+                    onSubmit={(e) => {
+                        e.preventDefault();
+                        const data = new FormData(e.target);
+                        fetch('/api/contact', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                name: data.get('name'),
+                                email: data.get('email'),
+                                message: data.get('message'),
+                            }),
                         })
-                        .catch(() => {
-                            setModal({
-                                visible: true,
-                                message: 'An unexpected error occurred while sending your message.',
-                                isError: true,
+                            .then((res) => res.json())
+                            .then((response) => {
+                                setModal({
+                                    visible: true,
+                                    message: response.message,
+                                    isError: !response.success,
+                                });
+                                if (response.success && formRef.current) {
+                                    formRef.current.reset();
+                                }
+                            })
+                            .catch(() => {
+                                setModal({
+                                    visible: true,
+                                    message: 'An unexpected error occurred while sending your message.',
+                                    isError: true,
+                                });
                             });
-                        });
-                }}
-            >
-                <input className='inputs' name="name" placeholder="e.g. Nadine Rufo" required />
-                <input className='inputs' type="email" name="email" placeholder="youremail@gmail.com" required />
-                <textarea className='inputs' name="message" rows={8} placeholder="Your message" required />
-                <button className='contactbutton-style' type="submit">Send Message</button>
-            </form>
+                    }}
+                >
+                    <input className='inputs' name="name" placeholder="e.g. Nadine Rufo" required />
+                    <input className='inputs' type="email" name="email" placeholder="youremail@gmail.com" required />
+                    <textarea className='inputs' name="message" rows={8} placeholder="Your message" required />
+                    <button className='contactbutton-style' type="submit">Send Message</button>
+                </form>
 
-            {modal.visible && (
-                <div className="modal-overlay" onClick={handleCloseModal}>
-                    <div style={{ padding: '1rem' }} className="modal-content modal-border">
-                        <p
-                            className="modal-question"
-                            style={{ color: modal.isError ? '#d9534f' : '#4077DE' }}
-                        >
-                            {modal.message}
-                        </p>
-                        {!modal.isError ? (
-                            <p style={{ textAlign: 'center' }} className="modal-answer">
-                                Thank you for reaching out! I’ll get back to you as soon as possible.
+                {modal.visible && (
+                    <div className="modal-overlay" onClick={handleCloseModal}>
+                        <div style={{ padding: '1rem' }} className="modal-content modal-border">
+                            <p
+                                className="modal-question"
+                                style={{ color: modal.isError ? '#d9534f' : '#4077DE' }}
+                            >
+                                {modal.message}
                             </p>
-                        ) : (
-                            <p style={{ textAlign: 'center' }} className="modal-answer">
-                                Please try again later or email me directly at <strong>nadinerufo7@gmail.com</strong>.
-                            </p>
-                        )}
+                            {!modal.isError ? (
+                                <p style={{ textAlign: 'center' }} className="modal-answer">
+                                    Thank you for reaching out! I’ll get back to you as soon as possible.
+                                </p>
+                            ) : (
+                                <p style={{ textAlign: 'center' }} className="modal-answer">
+                                    Please try again later or email me directly at <strong>nadinerufo7@gmail.com</strong>.
+                                </p>
+                            )}
+                        </div>
                     </div>
+                )}
+            </section>
+            <section className='container' ref={sectionRefs[1]} data-index={1}>
+                <h1 className='contact-title'>Download my CV</h1>
+                <p className='contact-subtitle'>Interested? You can download my CV. I appreciate you taking the time to check out my portfolio.</p>
+
+                <div className='contact-cv-border'>
+                    <a
+                        href="/NadineFayeRufo_CV.pdf"
+                        download="NadineFayeRufo_CV.pdf"
+                    >
+                        <button className='cv-download-btn'><FaDownload size={20} /> Download</button>
+
+                    </a>
                 </div>
-            )}
+            </section>
         </div>
     );
 };
