@@ -110,7 +110,7 @@ const Contact = () => {
                     </div>
                 )}
             </section>
-            <section className='container' ref={sectionRefs[1]} data-index={1}>
+            {/* <section className='container' ref={sectionRefs[1]} data-index={1}>
                 <div className='cv-section'>
                     <img className='cv' src={rufocv} alt="Logo" />
 
@@ -129,7 +129,7 @@ const Contact = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 };
