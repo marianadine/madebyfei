@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Contact.css';
 import logo from '../imgs/logoblue.png';
+import rufocv from '../imgs/rufocv.png';
 import ScrollIndicator from './ScrollIndicator';
 
 import { FaDownload } from "react-icons/fa";
@@ -110,17 +111,23 @@ const Contact = () => {
                 )}
             </section>
             <section className='container' ref={sectionRefs[1]} data-index={1}>
-                <h1 className='contact-title'>Download my CV</h1>
-                <p className='contact-subtitle'>Interested? You can download my CV. I appreciate you taking the time to check out my portfolio.</p>
+                <div className='cv-section'>
+                    <img className='cv' src={rufocv} alt="Logo" />
 
-                <div className='contact-cv-border'>
-                    <a
-                        href="/NadineFayeRufo_CV.pdf"
-                        download="NadineFayeRufo_CV.pdf"
-                    >
-                        <button className='cv-download-btn'><FaDownload size={20} /> Download</button>
+                    <div className='container cv'>
+                        <h1 className='contact-title'>Download my CV</h1>
+                        <p className='contact-subtitle'>Interested? You can download my CV. I appreciate you taking the time to check out my portfolio.</p>
 
-                    </a>
+                        <div className='contact-cv-border'>
+                            <a
+                                href="/NadineFayeRufo_CV.pdf"
+                                download="NadineFayeRufo_CV.pdf"
+                            >
+                                <button className='cv-download-btn'><FaDownload size={20} /> Download</button>
+
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
