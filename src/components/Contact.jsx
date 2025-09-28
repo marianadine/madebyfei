@@ -43,7 +43,7 @@ const Contact = () => {
 
     return (
         <div className='scroll-container'>
-            <ScrollIndicator sections={2} activeSection={activeSection} />
+            <ScrollIndicator sections={1} activeSection={activeSection} />
 
             <section className='container' ref={sectionRefs[0]} data-index={0}>
                 <img className='contactlogo' src={logo} alt="Logo" />
