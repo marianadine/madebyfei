@@ -16,6 +16,8 @@ import cupid404 from '../imgs/cupid404.png';
 import ars from '../imgs/ars.png';
 import uniqlo from '../imgs/uniqlo.png';
 import madebyfei from '../imgs/madebyfei.png';
+import clickdbyfei from '../imgs/clickdbyfei.png';
+import maisonsucre from '../imgs/maisonsucre.png';
 import solarsphere from '../imgs/solarsphere.png';
 import esphere from '../imgs/esphere.png';
 import cocofw from '../imgs/cocofw.png';
@@ -29,6 +31,8 @@ import cupid4042 from '../imgs/1cupid404.png';
 import ars2 from '../imgs/ars2.png';
 import uniqlo2 from '../imgs/uniqlo2.png';
 import madebyfei2 from '../imgs/madebyfei2.png';
+import clickdbyfei2 from '../imgs/clickdbyfei2.png';
+import maisonsucre2 from '../imgs/maisonsucre2.png';
 import solarsphere2 from '../imgs/solarsphere2.png';
 import esphere2 from '../imgs/esphere2.png';
 import cocofw2 from '../imgs/cocofw2.png';
@@ -92,11 +96,19 @@ const Designs = () => {
     },
     {
       name: "Made By Fei",
-      technologies: "HTML, CSS, ReactJS",
-      type: "Full Stack Development",
+      technologies: "ReactJS & CSS",
+      type: "Front End Development",
       mode: "Individual",
       expandedImage: madebyfei,
       defaultImage: madebyfei2,
+    },
+    {
+      name: "Clickd By Fei",
+      technologies: "ReactJS & CSS",
+      type: "Front End Development",
+      mode: "Individual",
+      expandedImage: clickdbyfei,
+      defaultImage: clickdbyfei2,
     },
     {
       name: "ExploreSphere",
