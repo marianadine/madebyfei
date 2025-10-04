@@ -111,6 +111,14 @@ const Designs = () => {
       defaultImage: clickdbyfei2,
     },
     {
+      name: "Maison Sucre",
+      technologies: "ReactJS, CSS & Tailwind",
+      type: "Front End Development",
+      mode: "Individual",
+      expandedImage: maisonsucre,
+      defaultImage: maisonsucre2,
+    },
+    {
       name: "ExploreSphere",
       technologies: "ReactJS, Figma",
       type: "Front-end Development",
