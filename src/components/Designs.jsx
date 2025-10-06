@@ -298,6 +298,20 @@ const Designs = () => {
                   }}
 
                 >
+                  {design.hasLink && expandedIndex === index && (
+                    <button
+                      className="external-link-button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(design.link, "_blank", "noopener,noreferrer");
+                      }}
+                    >
+                      <FaArrowRight
+                        size={24}
+                        style={{ transform: "rotate(-45deg)" }}
+                      />
+                    </button>
+                  )}
                   <p className="work-duration">{design.type}</p>
                   <div
                     className={`work-bottominfo ${expandedIndex === index ? 'hidden' : ''}`}
