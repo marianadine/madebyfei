@@ -191,80 +191,25 @@
     font-size: clamp(64px, 7vw, 96px);
 }
 
-/* 📱 Responsive scaling for ~125% zoom or narrower screens */
-@media screen and (max-width: 1440px) {
-    .works-heading {
-        font-size: 80px;
-        margin-top: -40px;
-    }
-
-    .work {
-        min-width: 260px;
-        max-width: 260px;
-        height: 450px;
-        padding: 15px 30px;
-    }
-
-    .work.expanded {
-        min-width: 750px;
-        max-width: 750px;
-    }
-
-    .work-duration {
-        font-size: 16px;
-        right: 20px;
-    }
-
-    .work-name {
-        font-size: 20px;
-        margin-top: 40px;
-    }
-
-    .work-tech {
-        font-size: 16px;
-    }
-
-    .section2-headingtypo {
-        font-size: 52px;
-        padding-bottom: 15px;
-    }
-
-    .section2-oneline {
-        gap: 100px;
-        margin-bottom: -200px;
-        margin-top: -100px;
-    }
-
-    .section2-fontnamemain,
-    .section2-fontname {
-        font-size: 120px;
-        width: 500px;
-    }
-
-    .section2-explanation {
-        font-size: 16px;
-        width: 65%;
-    }
-
-    .workflow-heading {
-        font-size: 80px;
-        padding: 0 25px;
-    }
-
-    .workflow-container {
-        padding: 40px;
-    }
-
-    .workflow-explanation {
-        font-size: 18px;
-    }
-
-    .workflow-title {
-        font-size: 80px;
-    }
+.external-link-button {
+    width: fit-content;
+    padding: 8px 12px;
+    background-color: #4077DE;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.mobile-warning {
+.external-link-button:hover {
+    background-color: #4077DE;
+    border: none;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* .mobile-warning {
     display: none;
     position: fixed;
     top: 0;
@@ -287,4 +232,4 @@
     .mobile-warning {
         display: flex;
     }
-}
+} */
