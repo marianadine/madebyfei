@@ -41,7 +41,7 @@ import pcare2 from '../imgs/pcare2.png';
 import atm2 from '../imgs/atm2.png';
 import jpcs2 from '../imgs/jpcs2.png';
 
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaArrowRight } from "react-icons/fa";
 
 const Designs = () => {
   const [activeSection, setActiveSection] = useState(0);
@@ -93,6 +93,8 @@ const Designs = () => {
       mode: "Groupings",
       expandedImage: solarsphere,
       defaultImage: solarsphere2,
+      hasLink: true,
+      link: "https://www.solarsphere.homes/"
     },
     {
       name: "Made By Fei",
@@ -101,6 +103,8 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: madebyfei,
       defaultImage: madebyfei2,
+      hasLink: true,
+      link: "https://madebyfei.vercel.app/"
     },
     {
       name: "Clickd By Fei",
@@ -109,6 +113,8 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: clickdbyfei,
       defaultImage: clickdbyfei2,
+      hasLink: true,
+      link: "https://clickbyfei.vercel.app/"
     },
     {
       name: "Maison Sucre",
@@ -117,11 +123,13 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: maisonsucre,
       defaultImage: maisonsucre2,
+      hasLink: true,
+      link: "https://maisonsucre.vercel.app/"
     },
     {
       name: "ExploreSphere",
       technologies: "ReactJS, Figma",
-      type: "Front-end Development",
+      type: "Front End Development",
       mode: "Groupings",
       expandedImage: esphere,
       defaultImage: esphere2,
@@ -133,6 +141,8 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: pcare,
       defaultImage: pcare2,
+      hasLink: false,
+      link: "",
     },
     {
       name: "NU MOA Bulldogs Exchange",
@@ -141,6 +151,8 @@ const Designs = () => {
       mode: "Groupings",
       expandedImage: numoabe,
       defaultImage: numoabe2,
+      hasLink: false,
+      link: "",
     },
     {
       name: "EcoAir",
@@ -149,6 +161,8 @@ const Designs = () => {
       mode: "Groupings",
       expandedImage: ars,
       defaultImage: ars2,
+      hasLink: false,
+      link: "",
     },
     {
       name: "Uniqlo Inventory System",
@@ -157,6 +171,8 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: uniqlo,
       defaultImage: uniqlo2,
+      hasLink: false,
+      link: "",
     },
     {
       name: "COCO Fashion Week 2025",
@@ -165,6 +181,8 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: cocofw,
       defaultImage: cocofw2,
+      hasLink: false,
+      link: "",
     },
     {
       name: "JPCS NU MOA",
@@ -173,6 +191,8 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: jpcs,
       defaultImage: jpcs2,
+      hasLink: true,
+      link: "https://jpcsnumoa.github.io/community/",
     },
     {
       name: "Cupid 404",
@@ -181,6 +201,8 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: cupid404,
       defaultImage: cupid4042,
+      hasLink: true,
+      link: "https://cupid404.vercel.app",
     },
     {
       name: "Best Dressed Voting System",
@@ -189,6 +211,8 @@ const Designs = () => {
       mode: "Individual",
       expandedImage: bestdressed,
       defaultImage: bestdressed2,
+      hasLink: false,
+      link: "",
     },
     {
       name: "Money Mauve",
@@ -197,6 +221,8 @@ const Designs = () => {
       mode: "Groupings",
       expandedImage: atm,
       defaultImage: atm2,
+      hasLink: false,
+      link: "",
     }
   ];
 
