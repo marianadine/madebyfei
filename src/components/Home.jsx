@@ -67,10 +67,8 @@ const Home = () => {
     { name: "Android Studio", icon: faAndroid, color: "#3DDC84" },
     { name: "GitHub", icon: faGithub, color: "#000000" },
     { name: "Node.js", icon: faNodeJs, color: "#68A063" },
-    { name: "Express", icon: faServer, color: "#000000" },
     { name: "MongoDB", icon: faGithub, color: "#4DB33D" },
   ];
-
 
   useEffect(() => {
     const observerOptions = { root: null, threshold: 0.5 };
@@ -168,13 +166,13 @@ const Home = () => {
           />
         ))}
 
-        <p className='section1-p'>she really said ‘I’m gonna make my portfolio.’</p>
+        <p className='section1-p'>a portfolio</p>
         <img
           className='mainlogo'
           src={logo}
           alt="Logo"
         />
-        <p className='section1-p'>designs that click. literally.</p>
+        <p className='section1-p'>by maria nadine rufo</p>
       </section>
 
       <section className='container' ref={sectionRefs[1]} data-index={1}>
