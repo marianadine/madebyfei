@@ -206,7 +206,7 @@ const About = () => {
           </div>
         </div>
 
-        <p className='section3-albumtracks'>the cats, of course/spotify for the vibes/laptop, obviously/glasses so I can actually see/a book to keep me sane/drink your water/top albums on repeat</p>
+        <p className='section3-albumtracks'>the cats, of course/spotify for the vibes/laptop, an essential/glasses so I can actually see/a book to keep me sane/drink your water/top albums on repeat</p>
       </section>
 {/* 
       <section className='container' ref={sectionRefs[3]} data-index={3}>
