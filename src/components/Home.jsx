@@ -26,6 +26,7 @@ import { FaCheck } from "react-icons/fa";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faJs,
+  faJava,
   faReact,
   faHtml5,
   faCss3Alt,
@@ -57,6 +58,7 @@ const Home = () => {
 
   const techStack = [
     { name: "JavaScript", icon: faJs, color: "#f7df1e" },
+    { name: "Java", icon: faJava, color: "#007396" },
     { name: "React", icon: faReact, color: "#61DBFB" },
     { name: "React Native", icon: faReact, color: "#61DBFB" },
     { name: "HTML", icon: faHtml5, color: "#e34c26" },
