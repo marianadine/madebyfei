@@ -313,9 +313,6 @@ const Home = () => {
               <a href="https://www.facebook.com/mariaafeii" target="_blank" rel="noopener noreferrer">
                 <img className='contacts-logo' src={fblogo} alt="Facebook" />
               </a>
-              <a href="https://www.instagram.com/ae.feyy/" target="_blank" rel="noopener noreferrer">
-                <img className='contacts-logo' src={iglogo} alt="Instagram" />
-              </a>
               <a href="https://www.linkedin.com/in/marianadine0912" target="_blank" rel="noopener noreferrer">
                 <img className='contacts-logo' src={linlogo} alt="LinkedIn" />
               </a>
