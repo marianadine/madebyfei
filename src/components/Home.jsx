@@ -68,7 +68,6 @@ const Home = () => {
     { name: "VS Code", icon: faLaptopCode, color: "#007ACC" },
     { name: "Android Studio", icon: faAndroid, color: "#3DDC84" },
     { name: "GitHub", icon: faGithub, color: "#000000" },
-    { name: "Node.js", icon: faNodeJs, color: "#68A063" },
     { name: "MongoDB", icon: faGithub, color: "#4DB33D" },
   ];
 
