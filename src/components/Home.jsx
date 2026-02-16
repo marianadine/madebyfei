@@ -186,7 +186,7 @@ const Home = () => {
           </div>
 
           <p className='section2-p'>
-            — an aspiring frontend developer with a <br />
+            — an aspiring UI/UX Designer with a <br />
             passion for clean design and smooth <br />
             user experiences.
           </p>
@@ -208,9 +208,9 @@ const Home = () => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <div className='modal-border'>
               <img className='modal-logo' src={logo} />
-              <h2 className='modal-question'>Why Frontend Development?</h2>
+              <h2 className='modal-question'>Why UI/UX Design?</h2>
               <p className='modal-answer'>
-                I love frontend development because it’s where design meets technology — I get to bring ideas to life with interactive, beautiful user interfaces. Seeing designs turn into functional, engaging experiences for users is incredibly satisfying. It’s a blend of creativity and problem-solving that I find endlessly exciting!
+                I’m driven by UI/UX because it allows me to advocate for the user while solving complex problems through elegant design. For me, it’s more than just making things look good. It’s about crafting intuitive journeys and meaningful experiences that feel seamless. I love the blend of creativity and logic in UI/UX, and how it empowers me to make a real impact on how people interact with technology. Plus, seeing users engage with something I designed is incredibly rewarding.
               </p>
             </div>
           </div>
