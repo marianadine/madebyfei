@@ -94,7 +94,7 @@ const Designs = () => {
       expandedImage: solarsphere,
       defaultImage: solarsphere2,
       hasLink: true,
-      link: "https://www.solarsphere.homes/"
+      link: "https://solarsphere-web.vercel.app/"
     },
     {
       name: "Made By Fei",
